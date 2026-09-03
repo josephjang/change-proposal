@@ -1,6 +1,6 @@
 # Principles
 
-Ten principles. Each has a statement, the reasoning, what it implies, and the tension it creates. The core rules (`rules.md`) and every pattern cite them by number. When a rule and a principle conflict in a concrete case, the principle wins and the rule needs a proposal.
+Eleven principles. Each has a statement, the reasoning, what it implies, and the tension it creates. The core rules (`rules.md`) and every pattern cite them by number. When a rule and a principle conflict in a concrete case, the principle wins and the rule needs a proposal.
 
 The principles describe the whole practice, patterns included. Where a principle's implication is carried by a pattern rather than by the core, the pattern is named — and until a team adopts that pattern, the principle is guidance, not a rule.
 
@@ -106,10 +106,20 @@ The principles describe the whole practice, patterns included. Where a principle
 
 **Tension.** Signals are noticed in retrospect, after some pain. The pain of one missed review is smaller than the cost of a year of ceremony.
 
+## P11. Single source for judgment — others link, never restate
+
+**Statement.** The proposal is the source of truth for the judgment behind its change — the problem's background, the alternatives rejected and why, the limits knowingly accepted. A document that needs this content links to the proposal; it does not restate it.
+
+**Reasoning.** The same judgment written into two documents is edited apart and disagrees later, and every restatement is rewritten for its audience, so the copies drift by design, not by accident. Code already has this protection — C5 forbids the proposal to copy what code owns. The proposal's own content deserves the same rule in the other direction.
+
+**Implies.** Whoever writes the PR description, the tracker comment or a state document decides its shape; when it needs the judgment recorded here, it points here. C5 and this principle are mirrors: the proposal does not duplicate what code, tests or the tracker own, and no document duplicates what the proposal owns.
+
+**Tension.** A link is a click further than a paragraph, and a skimming reviewer may not follow it. A one-sentence summary next to the link is the accepted compromise; a full restatement is not.
+
 ---
 
 ## How the principles relate
 
-P1, P9 and P10 are about **cost**: proportional, brief, and only what is needed now. P2, P5 and P6 are about **truth**: judgment, honest authorship, honest verification. P3, P4, P7 and P8 are about **findability over time**: with the code, frozen, one vocabulary, bridged to current state.
+P1, P9 and P10 are about **cost**: proportional, brief, and only what is needed now. P2, P5 and P6 are about **truth**: judgment, honest authorship, honest verification. P3, P4, P7, P8 and P11 are about **findability over time**: with the code, frozen, one vocabulary, bridged to current state, one source for the judgment.
 
 When two conflict in a concrete case — a long but truthful Verification against one page — truth wins over cost, and findability decides how (a linked appendix).

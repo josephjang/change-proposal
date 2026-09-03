@@ -10,7 +10,7 @@ This repository uses the practice on itself. Its composition is stated at the to
 | A pattern added or removed, or its signal / requires / conflicts / rules changed | Yes — contract |
 | A label added to the table in `docs/patterns/README.md` | Yes — contract |
 | The core template changed in what it asks for | Yes — contract |
-| Wording, examples, typos, translations catching up with English | No — PR description only |
+| Wording, examples, typos | No — PR description only |
 
 ## Procedure
 

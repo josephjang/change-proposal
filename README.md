@@ -11,7 +11,7 @@ That is the whole core. Everything else — sizing, review stages, AI-drafting r
 | Path | What |
 |---|---|
 | `docs/concept.md` | What a Change Proposal is, what it is not, what the core deliberately leaves undefined |
-| `docs/principles.md` | Ten principles and the reasoning behind them |
+| `docs/principles.md` | Eleven principles and the reasoning behind them |
 | `docs/rules.md` | The core rules — eight of them. Pattern rules live in the pattern cards |
 | `docs/patterns/README.md` | The pattern catalog: what each adds, its signal, how patterns combine, example compositions |
 | `docs/patterns/<name>.md` | One card per pattern, self-contained: intent, signal, what it adds, its rules, cost, removal |
