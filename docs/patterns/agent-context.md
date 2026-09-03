@@ -17,8 +17,8 @@ An agent — or a person new to the area — rebuilds an alternative a proposal 
 **An instruction block** in the repository's agent file (`AGENTS.md`, `CLAUDE.md`, or the tool's equivalent):
 
 > **Change proposals.** This repository records the judgment behind changes in `docs/changes/`; the composition in force is stated at the top of `docs/changes/README.md`.
-> **Before changing code**: search `docs/changes/` for proposals whose `touches` overlap the area you will touch (or whose `Change` section names the paths). For every proposal with `status: implemented`, treat `Decisions`, non-goals and `Risks & deferred` as constraints. If your task would reverse one, say so before writing code. Treat `superseded` and `abandoned` proposals as history; follow `superseded_by`. If `docs/decisions/` exists, `accepted` records there are constraints too.
-> **While building**: if the proposal has `Success criteria`, they are your stopping condition.
+> **Before changing code**: search `docs/changes/` for proposals whose `touches` overlap the area you will touch (or whose `Change` section names the paths). For every proposal with `status: implemented`, treat `Decisions` (split or not), `Non-Goals` and `Risks & deferred` as constraints. If your task would reverse one, say so before writing code. Treat `superseded` and `abandoned` proposals as history; follow `superseded_by`. If `docs/decisions/` exists, `accepted` records there are constraints too.
+> **While building**: if the proposal has `Requirements`, they are your stopping condition.
 > **When finishing**: follow the drafting rules of `human-ai-split` and `evidence-verification` if this repository has adopted them (see `docs/changes/README.md`). Never edit a proposal whose status is `implemented` or `superseded`.
 
 **A controlled `touches` vocabulary**, declared in `docs/changes/README.md` once the repository holds more than about thirty proposals, so that search hits reliably.

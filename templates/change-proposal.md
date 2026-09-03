@@ -11,7 +11,7 @@
      How it works today and why it was built that way, when that matters — the diff shows only "after".
      "What is the problem" — not "what we will build". -->
 
-## Non-goals
+## Non-Goals
 
 <!-- What this change deliberately does not do, and why. At least one. -->
 
@@ -20,7 +20,10 @@
 ## Decisions
 
 <!-- Only decisions that had alternatives. If none, delete this section.
-     Chosen / rejected / why — a reason that would change if the facts changed — and when to revisit. -->
+     Chosen / rejected / why — a reason that would change if the facts changed — and when to revisit.
+     When both kinds are present, may be split into `Product Decisions` then `Technical Decisions`
+     (product: reversing it changes what the team experiences or what a standard means;
+     technical: only the code changes). -->
 
 **[Decision 1]**:
 

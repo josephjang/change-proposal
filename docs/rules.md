@@ -14,10 +14,10 @@ When a rule and a principle conflict in a concrete case, the principle wins and 
 |---|---|---|
 | **C1** | A change that alters observable behavior MUST have a proposal. A change that does not — refactor with identical behavior, typo, dependency patch, tests only — MUST NOT have one; its pull-request description MUST say there is no behavior change and how that was checked. | P1, P3 |
 | **C2** | The proposal MUST be at `docs/changes/YYYY-MM-DD-<slug>.md` and MUST be committed in the same pull request as the change. | P3 |
-| **C3** | The proposal MUST consist of a title and sections with exactly these labels, in this order: `Problem`, `Non-goals`, `Decisions`, `Verification`, `Risks & deferred`. A section with nothing to say MUST be deleted. Sections added by adopted patterns use the labels those patterns define. | P7, P9 |
+| **C3** | The proposal MUST consist of a title and sections with exactly these labels, in this order: `Problem`, `Non-Goals`, `Decisions`, `Verification`, `Risks & deferred`. A section with nothing to say MUST be deleted. `Decisions` MAY be split into `Product Decisions` followed by `Technical Decisions` when both kinds are present — a decision is product if reversing it changes what the team experiences or what a standard means, technical if only the code changes; C7 applies to each. Sections added by adopted patterns use the labels those patterns define. | P7, P9 |
 | **C4** | A person MUST write the proposal. Material may come from anywhere; the text of each section is a person's judgment. | P5 |
 | **C5** | The proposal MUST NOT reproduce content whose source of truth is the code, the tests or the tracker — schemas, signatures, payloads, file lists, task breakdowns. It MUST reference them instead. | P2 |
-| **C6** | `Non-goals` MUST contain at least one item, each with its reason. | P2 |
+| **C6** | `Non-Goals` MUST contain at least one item, each with its reason. | P2 |
 | **C7** | `Decisions` MUST contain only decisions that had alternatives. Each entry MUST name what was chosen, what was rejected, and a reason of the kind that would change if the facts changed. It SHOULD name the condition under which the decision would be revisited. | P2 |
 | **C8** | `Verification` MUST state what was checked and what was observed, and MUST state what was not checked, with the reason. The proposal SHOULD fit on one page. | P6, P9 |
 

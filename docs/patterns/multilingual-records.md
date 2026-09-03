@@ -31,12 +31,14 @@ English headings carry nothing extra. Readers use the local label; tooling and a
 | Label | Korean |
 |---|---|
 | Problem | 문제 |
-| Non-goals | 비목표 |
-| Goals / Non-goals | 목표 / 비목표 |
+| Non-Goals | 비목표 |
+| Goals | 목표 |
 | Decisions | 결정과 기각한 대안 |
+| Product Decisions | 제품 결정 |
+| Technical Decisions | 기술 결정 |
 | Verification | 검증 |
 | Risks & deferred | 감수한 리스크와 미룬 것 |
-| Success criteria | 완료 기준 · 성공 지표 |
+| Requirements | 요구사항 |
 | Change | 변경 |
 | Summary | 요약 |
 | Rollout & rollback | 롤아웃과 롤백 |
@@ -48,9 +50,9 @@ English headings carry nothing extra. Readers use the local label; tooling and a
 
 **Four invariants**, regardless of body language: front-matter keys and values, `status`, file names and slugs, `touches` tags are English.
 
-**A translation rule**: merged proposals are never translated — a translation would be a second, unfrozen copy. The practice's own documents are authored in English with translations that follow; where they disagree, the English text is authoritative.
+**A translation rule**: merged proposals are never translated — a translation would be a second, unfrozen copy.
 
-**A template** in the record language (`templates/ko/change-proposal.md` for Korean).
+**A template** in the record language, created by the adopter from the core template.
 
 ## Rules
 
@@ -59,12 +61,12 @@ English headings carry nothing extra. Readers use the local label; tooling and a
 | **ML1** | The record language MUST be declared in the composition. | P7 |
 | **ML2** | Front-matter keys and values, `status`, file names, and `touches` MUST be English regardless of the record language. | P7 |
 | **ML3** | A heading in a non-English proposal MUST carry the English label in parentheses after the local label. English headings carry nothing extra. | P7 |
-| **ML4** | A merged proposal MUST NOT be translated. Translations of the practice's own documents MUST follow the English text. | P4 |
+| **ML4** | A merged proposal MUST NOT be translated. | P4 |
 | **ML5** | An assistant MUST draft in the record language and MUST NOT translate a person's text. | P5 |
 
 ## Cost
 
-A parenthesis per heading in non-English proposals. Translations of the practice's documents cost effort to keep current; "English wins" keeps that from becoming a correctness problem.
+A parenthesis per heading in non-English proposals.
 
 ## Remove
 

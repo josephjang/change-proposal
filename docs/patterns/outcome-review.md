@@ -18,7 +18,7 @@ Proposals declare metrics with baselines and targets and nobody looks at the act
 
 ```
 # [name] — Outcome review
-## Success criteria
+## Requirements
 | Metric | Baseline | Target | Actual (T+30) | Verdict |     (met / missed / not measurable)
 ## Outcome
 - Predictions that held:

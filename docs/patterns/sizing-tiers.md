@@ -33,7 +33,7 @@ Recurring after-the-fact arguments — "this should have had more review", "this
 |---|---|---|
 | **T0** | All no, and no behavior change | PR description only |
 | **T1** | No ★, 0–1 yes | Core proposal |
-| **T2** | Any ★, or 2–3 yes | Core + `Summary` + `Change` + `Success criteria` + `Rollout & rollback` + `Cross-cutting concerns` (+ `Living docs` if that pattern is on) |
+| **T2** | Any ★, or 2–3 yes | Core + `Summary` + `Change` + `Requirements` + `Rollout & rollback` + `Cross-cutting concerns` (+ `Living docs` if that pattern is on) |
 | **T3** | 4+ yes, or E and F both yes | `initiative-umbrella` |
 
 **A `Summary` section** for T2 and above, directly under the title: three to five sentences — what changes, why, what does not change.
@@ -49,7 +49,7 @@ Recurring after-the-fact arguments — "this should have had more review", "this
 | **ST1** | Front matter MUST carry `tier`, determined by the rubric. T0 means no proposal. | P1 |
 | **ST2** | The tier MUST be proposed by the author with one line of reasoning in the PR and confirmed by a reviewer. When unsure, the higher tier MUST be chosen; the reviewer MAY lower it. | P1 |
 | **ST3** | Raising a tier MUST be done by adding sections and changing `tier`; the file MUST NOT be moved. | P7 |
-| **ST4** | T2 and above MUST include `Summary`, `Change`, `Success criteria`, `Rollout & rollback` and `Cross-cutting concerns`. | P1 |
+| **ST4** | T2 and above MUST include `Summary`, `Change`, `Requirements`, `Rollout & rollback` and `Cross-cutting concerns`. | P1 |
 | **ST5** | Word caps per tier apply as recorded in the repository's composition. | P9 |
 
 ## Parameters

@@ -23,7 +23,7 @@ Every pattern card has the same parts:
 | [`supersession`](supersession.md) | Merged proposals are immutable and reversed by new ones | Someone wants to "fix" a merged proposal | `supersedes` / `superseded_by`; a reversal procedure |
 | [`human-ai-split`](human-ai-split.md) | Assistants draft what is derivable; people write judgment; drafts are marked | An assistant is used to write any part of a proposal | Section classification; `<!-- ai-draft -->` marker; an instruction to assistants |
 | [`evidence-verification`](evidence-verification.md) | Verification is commands and observations only | An assistant implements or tests | The strict section shape; a reviewer test; an agent rule |
-| [`success-criteria`](success-criteria.md) | A true/false definition of done | "Is it done?" is disputed, or someone else implements from the proposal | `Goals / Non-goals` (replaces `Non-goals`), `Success criteria` |
+| [`success-criteria`](success-criteria.md) | A true/false definition of done | "Is it done?" is disputed, or someone else implements from the proposal | `Goals`, `Requirements` |
 | [`before-after`](before-after.md) | Describe what changed for readers who will not open the diff | Proposals are read months later or by agents, and the change cannot be reconstructed | `Change` (before / after / where) |
 | [`sizing-tiers`](sizing-tiers.md) | Explicit T0–T3 tiers with a rubric | Recurring after-the-fact arguments about how much review a change deserved | `tier` field; rubric; per-tier caps |
 | [`design-first-review`](design-first-review.md) | A docs-only PR reaches `accepted` before implementation | Risky changes arrive as finished code and reviewers cannot push back | `accepted` status; `Open questions`; two-stage flow |
@@ -44,12 +44,13 @@ One table for the core and every pattern. No pattern renames a section; a propos
 | Label | Introduced by | Replaces |
 |---|---|---|
 | `Problem` | core | |
-| `Non-goals` | core | |
+| `Non-Goals` | core | |
 | `Decisions` | core | |
+| `Product Decisions`, `Technical Decisions` | core | `Decisions` (together, when both kinds are present) |
 | `Verification` | core | |
 | `Risks & deferred` | core | |
-| `Goals / Non-goals` | `success-criteria` | `Non-goals` |
-| `Success criteria` | `success-criteria` | |
+| `Goals` | `success-criteria` | |
+| `Requirements` | `success-criteria` | |
 | `Change` | `before-after` | |
 | `Summary` | `sizing-tiers` (T2+), `initiative-umbrella` | |
 | `Rollout & rollback` | `risk-signals` | |

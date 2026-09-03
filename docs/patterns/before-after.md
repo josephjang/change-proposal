@@ -14,7 +14,7 @@ Proposals are read without their pull request (months later, by agents, across r
 
 ## Adds
 
-**One section**, placed after `Non-goals` (or `Goals / Non-goals`):
+**One section**, placed after `Non-Goals` (after `Requirements` when `success-criteria` is on):
 
 ```
 ## Change

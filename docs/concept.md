@@ -25,8 +25,8 @@ The word is chosen because the document's first job is to put an intent in front
 | Section | Holds |
 |---|---|
 | **Problem** | What is wrong now, for whom, with the evidence. How it works today and why it was built that way, when that matters. Not "what we will build". |
-| **Non-goals** | What this change deliberately does not do, and why. At least one. The line that stops the change from growing. |
-| **Decisions** | Only decisions that had alternatives. For each: what was chosen, what was rejected, and a reason of the kind that would change if the facts changed. Deleted if there were none. |
+| **Non-Goals** | What this change deliberately does not do, and why. At least one. The line that stops the change from growing. |
+| **Decisions** | Only decisions that had alternatives. For each: what was chosen, what was rejected, and a reason of the kind that would change if the facts changed. Deleted if there were none. May be split into **Product Decisions** and **Technical Decisions** when both kinds are present: reversing a product decision changes what the team experiences or what a standard means; reversing a technical one changes only the code. |
 | **Verification** | What was actually checked and what was observed. What was not checked, and why. |
 | **Risks & deferred** | Trade-offs accepted knowingly. Improvements found but deliberately not made, with the reason. |
 

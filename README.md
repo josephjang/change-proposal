@@ -6,8 +6,6 @@ A **Change Proposal (CP)** is a one-page markdown file that says why a change is
 
 That is the whole core. Everything else — sizing, review stages, AI-drafting rules, immutability, metadata, agent integration, tooling, translations — is a **pattern**: documented, optional, adoptable independently, and never assumed by the core.
 
-한국어: [README.ko.md](README.ko.md)
-
 ## Documents
 
 | Path | What |
@@ -17,7 +15,7 @@ That is the whole core. Everything else — sizing, review stages, AI-drafting r
 | `docs/rules.md` | The core rules — eight of them. Pattern rules live in the pattern cards |
 | `docs/patterns/README.md` | The pattern catalog: what each adds, its signal, how patterns combine, example compositions |
 | `docs/patterns/<name>.md` | One card per pattern, self-contained: intent, signal, what it adds, its rules, cost, removal |
-| `templates/change-proposal.md` | The core template (`templates/ko/` in Korean) |
+| `templates/change-proposal.md` | The core template |
 | `docs/changes/` | This repository's own proposals |
 
 This repository contains documents only. It ships no scripts, skills, configuration files or templates beyond the core one; patterns that involve tooling (`lint-gate`, `agent-skills`, `agent-context`) describe what the tooling must do and leave the implementation to adopters.
@@ -25,7 +23,7 @@ This repository contains documents only. It ships no scripts, skills, configurat
 ## The core in five lines
 
 1. A change that alters observable behavior gets a proposal at `docs/changes/YYYY-MM-DD-<slug>.md`, in the same PR as the code. No behavior change → the PR description says so.
-2. The proposal has five sections: **Problem**, **Non-goals**, **Decisions**, **Verification**, **Risks & deferred**.
+2. The proposal has five sections: **Problem**, **Non-Goals**, **Decisions**, **Verification**, **Risks & deferred**.
 3. It records what the code cannot: why, what was left out, what was rejected and why, what was actually checked, what was knowingly accepted.
 4. A person writes it. It fits on one page. Empty sections are deleted.
 5. Nothing else is required. Add a pattern when its signal appears.
@@ -36,7 +34,7 @@ The core does not define a lifecycle, metadata, sizing, review stages, how AI as
 
 ## Language
 
-English is canonical; Korean translations follow it and yield to it where they differ. Whether proposals themselves may be written in another language is the `multilingual-records` pattern.
+The practice's documents are English only. Whether proposals themselves may be written in another language is the `multilingual-records` pattern.
 
 ## Contributing
 

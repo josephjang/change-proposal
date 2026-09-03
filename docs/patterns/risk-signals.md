@@ -40,7 +40,7 @@ The first change that someone wishes had been discussed before it was built. Mos
   (write "n/a — reason" where something does not apply; that is the evidence it was considered)
 ```
 
-**One step**: when any answer is yes, one reviewer reads the draft — Problem, Non-goals, Decisions so far, and the two sections above — before implementation code is written. A comment on the branch is enough.
+**One step**: when any answer is yes, one reviewer reads the draft — Problem, Non-Goals, Decisions so far, and the two sections above — before implementation code is written. A comment on the branch is enough.
 
 **One line in the PR description**: which signals applied, or "none".
 

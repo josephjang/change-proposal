@@ -4,10 +4,10 @@
 
 Teams that build with AI assistants produce code faster than they record why. The judgment behind a change — what was rejected, what was knowingly accepted, what was actually verified — is lost in a chat transcript or written into a document away from the code that the next person or agent never reads. Existing document types (PRDs, design docs, ADRs) each cover part of this; none is sized for an ordinary change; and single prescribed processes get adopted whole and abandoned as ceremony, or adopted in part with the reasoning for the skipped parts lost.
 
-## Non-goals
+## Non-Goals
 
 - Shipping tooling (lint, skills, a config format): the `lint-gate` and `agent-skills` cards specify it; implementations wait until the composition statement has settled across a few adopters.
-- Translating every pattern card: concept, principles, rules, catalog and template are translated; cards follow on demand.
+- Translating the practice's documents: English is the single source; non-English proposals in adopting repositories are the `multilingual-records` pattern.
 - Recommending a composition: the catalog gives examples, not a verdict.
 
 ## Decisions
@@ -22,11 +22,11 @@ Teams that build with AI assistants produce code faster than they record why. Th
 
 ## Verification
 
-- Checked: every pattern name used in the concept, rules, catalog and Korean documents has a card (18); every rule id cited in a card is defined there; every relative link resolves; both core templates have exactly the five sections. Done with a throwaway script over the tree, not shipped (non-goal).
+- Checked: every pattern name used in the concept, rules and catalog has a card (18); every rule id cited in a card is defined there; every relative link resolves; the core template has exactly the five sections. Done with a throwaway script over the tree, not shipped (non-goal).
 - Not checked, and why: the practice has not been used on a real change by anyone but its authors. The first external adoption is the test; its findings arrive as proposals.
 
 ## Risks & deferred
 
 - Risk: without tooling, every rule is review-enforced; stretched reviewers will let markers and stale sections through. Accepted; the `lint-gate` card specifies the fix.
 - Risk: eighteen patterns may read as a menu rather than a shelf. Accepted; P10 and the example compositions (three patterns suffice) push the other way.
-- Deferred: tooling (non-goal). Deferred: Korean pattern cards (non-goal). Deferred: a worked example repository — after the first external adoption provides one.
+- Deferred: tooling (non-goal). Deferred: a worked example repository — after the first external adoption provides one.

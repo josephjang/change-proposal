@@ -18,7 +18,6 @@ This repository uses the practice on itself. Its composition is stated at the to
 2. Write the proposal from `templates/change-proposal.md`. Its `Problem` must name the situation the current practice mishandled; a proposal that starts from a solution is sent back.
 3. For a new pattern: show the signal, the per-change cost, and that it uses labels from the table — or why the table must grow.
 4. Because these are contract changes, a reviewer reads the draft before the wording is finalized (`risk-signals`).
-5. Keep the Korean translations in step in the same PR where practical, or in a follow-up PR marked "translation".
 
 ## Reviewing
 

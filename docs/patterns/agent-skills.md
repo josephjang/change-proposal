@@ -18,7 +18,7 @@ The same multi-step instructions are being pasted into agent sessions repeatedly
 
 | Skill | Must do | Must not do |
 |---|---|---|
-| `cp-context` | Find proposals whose `touches` or paths overlap the task; classify by status; extract `Decisions`, non-goals, `Risks & deferred`; report *compatible / careful / would reverse* per constraint; stop and ask if the task would reverse one. | Summarize proposals it did not open; proceed silently on a reversal. |
+| `cp-context` | Find proposals whose `touches` or paths overlap the task; classify by status; extract `Decisions` (split or not), `Non-Goals`, `Risks & deferred`; report *compatible / careful / would reverse* per constraint; stop and ask if the task would reverse one. | Summarize proposals it did not open; proceed silently on a reversal. |
 | `cp-draft` | Create the file at the right path from the repository's template; collect judgment sections by asking one question at a time and recording the person's words; draft derived sections with markers; add the sections the adopted patterns require; report what the person still owns. | Write a judgment section as a conclusion; remove a marker; translate a person's text. |
 | `cp-size` | Answer "does behavior change?", then the three risk signals or the tier rubric, each with one line of reasoning; state the consequences (sections, pre-code review); produce the PR line. | Size by diff length, time, or who wrote the code. |
 | `cp-finish` | Fill `Change` from the diff; fill `Verification` only with commands run in the session and their output; move everything else to "Not done, and why"; list markers remaining, word count, living docs; prepare the PR description. | Describe an unrun check as verified; edit a person's text; edit a merged proposal. |
