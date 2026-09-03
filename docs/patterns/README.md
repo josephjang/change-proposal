@@ -22,6 +22,7 @@ Every pattern card has the same parts:
 | [`proposal-metadata`](proposal-metadata.md) | Front matter: owner, status, links, tags | Proposals need to be found by something other than date, or a change spans several PRs | Front matter block and fields; `status` |
 | [`supersession`](supersession.md) | Merged proposals are immutable and reversed by new ones | Someone wants to "fix" a merged proposal | `supersedes` / `superseded_by`; a reversal procedure |
 | [`human-ai-split`](human-ai-split.md) | Assistants draft what is derivable; people write judgment; drafts are marked | An assistant is used to write any part of a proposal | Section classification; `<!-- ai-draft -->` marker; an instruction to assistants |
+| [`verification`](verification.md) | What was checked, observed, and not checked, in the proposal | "Was this tested?" has no findable answer after merge, or an unchecked path surfaces as a surprise | `Verification` |
 | [`evidence-verification`](evidence-verification.md) | Verification is commands and observations only | An assistant implements or tests | The strict section shape; a reviewer test; an agent rule |
 | [`success-criteria`](success-criteria.md) | A true/false definition of done | "Is it done?" is disputed, or someone else implements from the proposal | `Goals`, `Requirements` |
 | [`before-after`](before-after.md) | Describe what changed for readers who will not open the diff | Proposals are read months later or by agents, and the change cannot be reconstructed | `Change` (before / after / where) |
@@ -43,16 +44,16 @@ One table for the core and every pattern. No pattern renames a section; a propos
 
 | Label | Introduced by | Replaces |
 |---|---|---|
+| `Summary` | core (optional) | |
 | `Problem` | core | |
 | `Non-Goals` | core | |
 | `Decisions` | core | |
 | `Product Decisions`, `Technical Decisions` | core | `Decisions` (together, when both kinds are present) |
-| `Verification` | core | |
-| `Risks & deferred` | core | |
+| `Risks` | core | |
 | `Goals` | `success-criteria` | |
 | `Requirements` | `success-criteria` | |
 | `Change` | `before-after` | |
-| `Summary` | `sizing-tiers` (T2+), `initiative-umbrella` | |
+| `Verification` | `verification` | |
 | `Rollout & rollback` | `risk-signals` | |
 | `Cross-cutting concerns` | `risk-signals` | |
 | `Open questions` | `design-first-review` | |
@@ -76,7 +77,7 @@ Non-English labels are the `multilingual-records` pattern.
 
 A repository states its composition in prose at the top of `docs/changes/README.md`:
 
-> This repository uses the change-proposal core with `risk-signals`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Word cap: one page.
+> This repository uses the change-proposal core with `risk-signals`, `verification`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Word cap: one page.
 
 That is the whole mechanism. Patterns that bring tooling (`lint-gate`, `agent-skills`) may formalize the same statement into a configuration file; the prose remains the source of truth for people.
 
@@ -86,7 +87,7 @@ Starting points, not prescriptions. Each is the core plus the listed patterns.
 
 | Situation | Patterns | Notes |
 |---|---|---|
-| One person or a very small team, assistants used daily | `risk-signals`, `human-ai-split`, `evidence-verification` | The smallest composition that keeps AI drafting honest. |
+| One person or a very small team, assistants used daily | `risk-signals`, `verification`, `human-ai-split`, `evidence-verification` | The smallest composition that keeps AI drafting honest. |
 | A product team with a few shared contracts | + `proposal-metadata`, `supersession`, `agent-context`, `living-docs-bridge`, `spike-then-spec` | Merged proposals become agent constraints; state documents stay honest. |
 | A platform team whose output is contracts | + `sizing-tiers`, `design-first-review`, `decision-promotion`, `lint-gate` | Pre-code review is enforceable; standards have a home. |
 | Several teams running quarterly initiatives | + `initiative-umbrella`, `outcome-review`, `success-criteria` | Work larger than one proposal, with its outcome revisited. |

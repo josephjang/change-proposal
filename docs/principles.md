@@ -22,7 +22,7 @@ The principles describe the whole practice, patterns included. Where a principle
 
 **Reasoning.** Copied description goes stale the day after merge and teaches readers to distrust the document. Judgment does not go stale; it is a fact about the past.
 
-**Implies.** No schemas, payloads, file lists or work breakdowns in a proposal. Rejection reasons of the kind that would change if the facts changed. The five core sections are all judgment.
+**Implies.** No schemas, payloads, file lists or work breakdowns in a proposal. Rejection reasons of the kind that would change if the facts changed. The four required core sections are all judgment.
 
 **Tension.** Describing is easier than judging, and assistants are excellent at describing. Templates must refuse description.
 
@@ -62,7 +62,7 @@ The principles describe the whole practice, patterns included. Where a principle
 
 **Reasoning.** "Tests pass" is a sentence anyone can write; a command and its output can only be written by someone who ran it. When text is cheap, this gap is the main integrity risk.
 
-**Implies.** The core section asks for what was checked and observed and what was not. The stricter form — commands and results only, a mandatory "not done" entry, an agent rule — is `evidence-verification`.
+**Implies.** The `verification` pattern adds the section that asks for what was checked and observed and what was not. The stricter form — commands and results only, a mandatory "not done" entry, an agent rule — is `evidence-verification`.
 
 **Tension.** Honest "not done" lists look like negligence to an unfamiliar reader. They are the opposite.
 
@@ -72,7 +72,7 @@ The principles describe the whole practice, patterns included. Where a principle
 
 **Reasoning.** A shared vocabulary is what makes patterns composable: each adds sections without colliding, and a proposal grows in place when a change turns out larger than expected.
 
-**Implies.** Five core labels; patterns add from the same table (`docs/patterns/README.md`). No pattern renames a section.
+**Implies.** Four required core labels plus the optional `Summary`; patterns add from the same table (`docs/patterns/README.md`). No pattern renames a section.
 
 **Tension.** A fixed vocabulary resists local naming preferences. That is a deliberate constraint.
 

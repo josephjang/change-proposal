@@ -23,9 +23,9 @@ docs/changes/YYYY-MM-DD-<slug>/
   outcome.md        (with outcome-review)
 ```
 
-**The brief** (≈2,000 words), reviewed to `accepted` by the product owner and the technical lead. Sections: `Summary`, `Problem`, `Goals` (with an *appetite* — how much time or effort the problem is worth), `Non-Goals`, `Requirements` (metrics with baseline, target, method, when measured), `Decisions` (scope, audience, sequencing), `Milestones` (stage, audience, condition to advance, rollback trigger), `Risks & deferred`, `Open questions`.
+**The brief** (≈2,000 words), reviewed to `accepted` by the product owner and the technical lead. Sections: `Summary`, `Problem`, `Goals` (with an *appetite* — how much time or effort the problem is worth), `Non-Goals`, `Requirements` (metrics with baseline, target, method, when measured), `Decisions` (scope, audience, sequencing), `Milestones` (stage, audience, condition to advance, rollback trigger), `Risks`, `Open questions`.
 
-**The design** (≈4,000 words), reviewed to `accepted` technically. Sections: `Summary`, `Current structure` (how it works today and the constraints), `Goals`, `Non-Goals` (technical), `Design` (structure with one diagram; contracts that have no code yet; data flow and state), `Decisions` (a table: chosen, rejected, reason, revisit when), `Cross-cutting concerns`, `Rollout & rollback`, `Verification` (strategy at accepted; end-to-end results at implemented; the list of child proposals), `Risks & deferred`, `Living docs`, `Open questions`.
+**The design** (≈4,000 words), reviewed to `accepted` technically. Sections: `Summary`, `Current structure` (how it works today and the constraints), `Goals`, `Non-Goals` (technical), `Design` (structure with one diagram; contracts that have no code yet; data flow and state), `Decisions` (a table: chosen, rejected, reason, revisit when), `Cross-cutting concerns`, `Rollout & rollback`, `Verification` (strategy at accepted; end-to-end results at implemented; the list of child proposals), `Risks`, `Living docs`, `Open questions`.
 
 **A front-matter field** on child proposals: `parent: CP-YYYY-MM-DD-<slug>`. The design keeps the list of children with their status.
 

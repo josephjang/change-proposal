@@ -36,7 +36,7 @@ Recurring after-the-fact arguments — "this should have had more review", "this
 | **T2** | Any ★, or 2–3 yes | Core + `Summary` + `Change` + `Requirements` + `Rollout & rollback` + `Cross-cutting concerns` (+ `Living docs` if that pattern is on) |
 | **T3** | 4+ yes, or E and F both yes | `initiative-umbrella` |
 
-**A `Summary` section** for T2 and above, directly under the title: three to five sentences — what changes, why, what does not change.
+**`Summary` required** at T2 and above: the core's optional section (three to five sentences directly under the title) becomes mandatory.
 
 **Per-tier word caps** (defaults): T1 500, T2 1,500, T3 brief 2,000 / design 4,000.
 

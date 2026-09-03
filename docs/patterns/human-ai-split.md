@@ -18,7 +18,7 @@ An assistant is used to write any part of a proposal.
 
 | Judgment — a person writes or confirms | Derived — an assistant may draft |
 |---|---|
-| `Problem`, `Goals`, `Non-Goals`, `Requirements`, `Decisions` (or `Product Decisions` / `Technical Decisions`), `Risks & deferred`, the rollback line of `Rollout & rollback` | `Change`, `Summary`, `Cross-cutting concerns`, `Verification` (only what was run — see `evidence-verification`), `Living docs` |
+| `Problem`, `Goals`, `Non-Goals`, `Requirements`, `Decisions` (or `Product Decisions` / `Technical Decisions`), `Risks`, the rollback line of `Rollout & rollback` | `Change`, `Summary`, `Cross-cutting concerns`, `Verification` (only what was run — see `evidence-verification`), `Living docs` |
 
 For judgment sections the assistant **supplies material** — alternatives it tried, risks it noticed, a digest of the issue — and asks for the conclusion. It does not write the conclusion.
 

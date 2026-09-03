@@ -16,7 +16,7 @@ Proposals are being written after the fact to rationalize prototypes, or authors
 
 **Three rules** and **one status value** (`abandoned`).
 
-**An abandoned note** — a three-section proposal for a discarded spike: `Problem` (what was being explored), `Decisions` (what was tried and why it was dropped), `Risks & deferred` used as "what we learned". A few lines. Its value is that the next person does not spend the same afternoon.
+**An abandoned note** — a three-section proposal for a discarded spike: `Problem` (what was being explored), `Decisions` (what was tried and why it was dropped), `Risks` used as "what we learned". A few lines. Its value is that the next person does not spend the same afternoon.
 
 ## Rules
 

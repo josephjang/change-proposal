@@ -2,7 +2,7 @@
 
 A minimal practice for recording the *judgment* behind a change to a product or system, with a catalog of patterns that can be added later — one at a time, when needed.
 
-A **Change Proposal (CP)** is a one-page markdown file that says why a change is being made, what it deliberately leaves out, what was decided and rejected, what was checked, and what was accepted or deferred. It is written by a person, lives in the repository, and is merged in the same pull request as the change.
+A **Change Proposal (CP)** is a one-page markdown file that says why a change is being made, what it deliberately leaves out, what was decided and rejected, and what risks were knowingly accepted. It is written by a person, lives in the repository, and is merged in the same pull request as the change.
 
 That is the whole core. Everything else — sizing, review stages, AI-drafting rules, immutability, metadata, agent integration, tooling, translations — is a **pattern**: documented, optional, adoptable independently, and never assumed by the core.
 
@@ -23,8 +23,8 @@ This repository contains documents only. It ships no scripts, skills, configurat
 ## The core in five lines
 
 1. A change that alters observable behavior gets a proposal at `docs/changes/YYYY-MM-DD-<slug>.md`, in the same PR as the code. No behavior change → the PR description says so.
-2. The proposal has five sections: **Problem**, **Non-Goals**, **Decisions**, **Verification**, **Risks & deferred**.
-3. It records what the code cannot: why, what was left out, what was rejected and why, what was actually checked, what was knowingly accepted.
+2. The proposal has four sections — **Problem**, **Non-Goals**, **Decisions**, **Risks** — plus an optional **Summary** up top.
+3. It records what the code cannot: why, what was left out, what was rejected and why, what was knowingly accepted.
 4. A person writes it. It fits on one page. Empty sections are deleted.
 5. Nothing else is required. Add a pattern when its signal appears.
 

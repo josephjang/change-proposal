@@ -3,7 +3,12 @@
 <!-- One page. Committed in the same pull request as the change, at docs/changes/YYYY-MM-DD-<slug>.md.
      Written by a person. Delete any section with nothing to say.
      Reference code by path; never paste schemas, signatures or file lists.
-     Sections beyond these five come from patterns your repository has adopted (docs/changes/README.md). -->
+     Sections beyond these come from patterns your repository has adopted (docs/changes/README.md). -->
+
+## Summary
+
+<!-- Optional. Three to five sentences: what changes, why, what does not change.
+     Delete when the proposal is short enough to speak for itself. -->
 
 ## Problem
 
@@ -13,30 +18,25 @@
 
 ## Non-Goals
 
-<!-- What this change deliberately does not do, and why. At least one. -->
+<!-- What this change deliberately does not do, and why — decided at scoping or discovered
+     during the work. At least one. -->
 
 - 
 
 ## Decisions
 
 <!-- Only decisions that had alternatives. If none, delete this section.
-     Chosen / rejected / why — a reason that would change if the facts changed — and when to revisit.
+     One bullet per decision: a stable id and the decision sentence in bold, then the rejected
+     alternative, a reason that would change if the facts changed, and when to revisit, as prose.
+     Ids (D1, D2, … — PD1/TD1 when split) are never renumbered when entries are added or removed.
      When both kinds are present, may be split into `Product Decisions` then `Technical Decisions`
      (product: reversing it changes what the team experiences or what a standard means;
      technical: only the code changes). -->
 
-**[Decision 1]**:
+- **D1: [Decision sentence.]** [Rejected alternative, reason, and when to revisit.]
 
-## Verification
+## Risks
 
-<!-- What was checked and what was observed. What was not checked, and why. -->
+<!-- Trade-offs accepted knowingly, with the reason. -->
 
-- Checked:
-- Not checked, and why:
-
-## Risks & deferred
-
-<!-- Trade-offs accepted knowingly. Improvements found but deliberately not made, with the reason. -->
-
-- Risk:
-- Deferred: (reason)
+- 

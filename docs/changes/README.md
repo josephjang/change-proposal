@@ -1,6 +1,6 @@
 # Proposals for this repository
 
-This repository uses the change-proposal core with `risk-signals`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Word cap: one page. Record language: English.
+This repository uses the change-proposal core with `risk-signals`, `verification`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Word cap: one page. Record language: English.
 
 Changes to the practice are recorded here, using the practice. How to contribute: `../../CONTRIBUTING.md`.
 

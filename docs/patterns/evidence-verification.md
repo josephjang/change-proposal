@@ -1,12 +1,12 @@
 # Pattern: evidence-verification
 
-- **Requires**: core
+- **Requires**: core, `verification` (the section this pattern strictifies)
 - **Combines with**: `human-ai-split` (Verification is a derived section; this pattern says what may go in it), `lint-gate` (the "not done" entry is checked)
 - **Conflicts with**: —
 
 ## Intent
 
-Make the core's Verification section a list of evidence rather than a list of claims, so that a reader — or an agent building on the change — can tell what is actually known to work.
+Make the `Verification` section a list of evidence rather than a list of claims, so that a reader — or an agent building on the change — can tell what is actually known to work.
 
 ## Signal
 
@@ -14,7 +14,7 @@ An assistant implements or tests any part of a change. Also: a reviewer catches 
 
 ## Adds
 
-**The strict shape of the section.** The core asks for "what was checked and observed; what was not, and why". This pattern fixes the form:
+**The strict shape of the section.** The `verification` pattern asks for "what was checked and observed; what was not, and why". This pattern fixes the form:
 
 ```
 ## Verification
@@ -42,4 +42,4 @@ None beyond honesty. Fluent drafts get rejected more often at first; that is the
 
 ## Remove
 
-Drop EV1–EV4; the core's looser wording remains. Removing it while assistants implement code means accepting their verification claims at face value.
+Drop EV1–EV4; the `verification` pattern's looser wording remains. Removing it while assistants implement code means accepting their verification claims at face value.

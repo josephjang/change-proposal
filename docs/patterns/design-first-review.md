@@ -18,7 +18,7 @@ Risky changes keep arriving as finished code and reviewers say they cannot push 
 
 **A two-stage flow** for proposals with a risk signal (or tier ≥ T2):
 
-1. *Design PR* — the proposal with every section except `Verification`, `Risks & deferred` and `Living docs`, plus `Open questions`. Docs only. Reviewed within the agreed turnaround. Merged → `accepted`.
+1. *Design PR* — the proposal with every section except `Verification`, `Risks` and `Living docs`, plus `Open questions`. Docs only. Reviewed within the agreed turnaround. Merged → `accepted`.
 2. *Implementation PR(s)* — each appends itself to `prs`; the last fills the remaining sections, empties `Open questions` (answers move into `Decisions`), and sets `implemented`.
 
 **One section** for the design stage:

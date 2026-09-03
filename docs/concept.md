@@ -2,13 +2,13 @@
 
 ## Definition
 
-A **Change Proposal** (CP) is a one-page markdown file that records the judgment behind one change to a product or system: why it is being made, what it deliberately leaves out, what was decided and what was rejected, what was actually verified, and what was knowingly accepted or deferred. A person writes it, it lives in the repository, and it is merged in the same pull request as the change.
+A **Change Proposal** (CP) is a one-page markdown file that records the judgment behind one change to a product or system: why it is being made, what it deliberately leaves out, what was decided and what was rejected, and what risks were knowingly accepted. A person writes it, it lives in the repository, and it is merged in the same pull request as the change.
 
 Three properties define it.
 
 - **It records judgment, not description.** Code, schemas and interfaces describe themselves. A proposal holds what code cannot recover.
 - **It travels with the change.** Same repository, same pull request, same review, same history. After the merge it is the change's record.
-- **It is small.** One page. Five sections. Anything that would make it larger is either description (and belongs in the code) or a pattern (and belongs in the catalog).
+- **It is small.** One page. Four sections and an optional summary. Anything that would make it larger is either description (and belongs in the code) or a pattern (and belongs in the catalog).
 
 ## Why "proposal"
 
@@ -20,15 +20,15 @@ The word is chosen because the document's first job is to put an intent in front
 
 **Location.** `docs/changes/YYYY-MM-DD-<slug>.md`, committed in the same pull request as the code.
 
-**Shape.** A title and five sections with fixed labels:
+**Shape.** A title, an optional summary, and four sections with fixed labels:
 
 | Section | Holds |
 |---|---|
+| **Summary** (optional) | Three to five sentences directly under the title: what changes, why, what does not change. |
 | **Problem** | What is wrong now, for whom, with the evidence. How it works today and why it was built that way, when that matters. Not "what we will build". |
-| **Non-Goals** | What this change deliberately does not do, and why. At least one. The line that stops the change from growing. |
+| **Non-Goals** | What this change deliberately does not do, and why — decided at scoping or discovered during the work. At least one. The line that stops the change from growing. |
 | **Decisions** | Only decisions that had alternatives. For each: what was chosen, what was rejected, and a reason of the kind that would change if the facts changed. Deleted if there were none. May be split into **Product Decisions** and **Technical Decisions** when both kinds are present: reversing a product decision changes what the team experiences or what a standard means; reversing a technical one changes only the code. |
-| **Verification** | What was actually checked and what was observed. What was not checked, and why. |
-| **Risks & deferred** | Trade-offs accepted knowingly. Improvements found but deliberately not made, with the reason. |
+| **Risks** | Trade-offs accepted knowingly, with the reason. |
 
 **Authorship.** A person writes it. Whether and how an assistant helps is not defined by the core.
 
@@ -45,12 +45,13 @@ The core is complete as a practice: a team can use it alone for years. It is als
 | how big a change must be before it needs more than one page, or more than one reviewer | `risk-signals`, `sizing-tiers` |
 | what happens to a proposal after it is merged — whether it may be edited, how it is reversed | `supersession` |
 | what a proposal's metadata is — owner, status, links, tags | `proposal-metadata` |
-| what "done" means beyond the Verification section | `success-criteria` |
+| what "done" means | `success-criteria` |
+| whether the proposal records what was verified | `verification` |
 | how to describe what changed, for readers who will not open the diff | `before-after` |
 | whether a proposal is reviewed before the code is written | `design-first-review` |
 | what to do with prototypes and experiments | `spike-then-spec` |
 | how AI assistants may participate in writing it | `human-ai-split` |
-| what counts as evidence in Verification | `evidence-verification` |
+| what counts as evidence in `Verification` | `evidence-verification` |
 | how current-state documents stay honest | `living-docs-bridge` |
 | where decisions that outlive a change go | `decision-promotion` |
 | how work larger than one proposal is organized | `initiative-umbrella` |
@@ -80,7 +81,7 @@ The core has exactly one sizing question — *does behavior change?* — and it 
 
 ## The setting
 
-The practice is shaped for teams that build with AI assistance, where code, summaries and verification logs are cheap to produce. That is why the core is small (drafting is free, so length is the failure mode), why it insists on judgment over description (description is what assistants do best and what goes stale first), and why Verification asks what was *observed* rather than what was done. But the core itself makes no assumption about assistants. How they participate is the `human-ai-split` pattern; how they read proposals is `agent-context`.
+The practice is shaped for teams that build with AI assistance, where code, summaries and verification logs are cheap to produce. That is why the core is small (drafting is free, so length is the failure mode), why it insists on judgment over description (description is what assistants do best and what goes stale first), and why the `verification` pattern asks what was *observed* rather than what was done. But the core itself makes no assumption about assistants. How they participate is the `human-ai-split` pattern; how they read proposals is `agent-context`.
 
 ## Vocabulary
 
@@ -88,9 +89,9 @@ The practice is shaped for teams that build with AI assistance, where code, summ
 |---|---|
 | **Change** | One intentional modification to a product or system, delivered through a pull request. |
 | **Proposal** | The document defined above. Abbreviated CP. Also the record of the change after the merge. |
-| **Section** | One of the five core parts, or a part added by a pattern. |
+| **Section** | One of the four core parts, the optional summary, or a part added by a pattern. |
 | **Label** | The fixed English name of a section (`Problem`, `Decisions`, …). Patterns add labels from one shared table (`docs/patterns/README.md`). |
-| **Judgment** | Content that only a person can supply: framing, boundaries, decisions and their reasons, what is accepted. The five core sections are judgment; Verification is judgment about evidence. |
+| **Judgment** | Content that only a person can supply: framing, boundaries, decisions and their reasons, what is accepted. The four core sections are judgment; `Verification`, where adopted, is judgment about evidence. |
 | **Pattern** | An optional, independently adoptable addition to the core, with a stated signal. Documented in `docs/patterns/`. |
 | **Signal** | The observable situation that says it is time to adopt a pattern. |
 | **Composition** | The set of patterns a repository has adopted, stated in its `docs/changes/README.md`. |

@@ -37,7 +37,7 @@ English headings carry nothing extra. Readers use the local label; tooling and a
 | Product Decisions | 제품 결정 |
 | Technical Decisions | 기술 결정 |
 | Verification | 검증 |
-| Risks & deferred | 감수한 리스크와 미룬 것 |
+| Risks | 리스크 |
 | Requirements | 요구사항 |
 | Change | 변경 |
 | Summary | 요약 |
