@@ -20,6 +20,8 @@ The word is chosen because the document's first job is to put an intent in front
 
 **Location.** `docs/changes/YYYY-MM-DD-<slug>.md`, committed in the same pull request as the code.
 
+**Title.** `Change Proposal: <change name>`. The path and file name already say what the document is, but a reader of the document alone may never look at them. A repository that already identifies documents its own way — an id scheme in the tradition of KIP-123, a date — may use that marker in place of the prefix.
+
 **Shape.** A title, an optional summary, and four sections with fixed labels:
 
 | Section | Holds |

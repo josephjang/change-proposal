@@ -1,4 +1,4 @@
-# Initial release of the change-proposal practice
+# Change Proposal: Initial release of the change-proposal practice
 
 ## Problem
 
