@@ -1,18 +1,12 @@
 # Pattern: risk-signals
 
-- **Requires**: core
-- **Combines with**: `design-first-review` (turns "a reviewer reads the draft" into a formal stage), `sizing-tiers` (the three signals become the ★ questions), `living-docs-bridge` (a signal triggers the living-docs requirement)
-- **Conflicts with**: —
+Catches the changes whose cost of being wrong is high, before the code is written, with three questions instead of a rubric, so that everything else stays small.
 
-## Intent
+**When.** The first change that someone wishes had been discussed before it was built. Most teams meet this within weeks; adopting it from the start is reasonable.
 
-Catch the changes whose cost of being wrong is high — before the code is written — with three questions instead of a rubric, so that everything else stays small.
+**Goes with.** `design-first-review` (turns "a reviewer reads the draft" into a formal stage), `sizing-tiers` (the three signals become the ★ questions), `living-docs-bridge` (a signal triggers the living-docs section).
 
-## Signal
-
-The first change that someone wishes had been discussed before it was built. Most teams meet this within weeks; adopting it with the core is reasonable.
-
-## Adds
+## What it adds
 
 **Three questions**, answered by the author before implementation:
 
@@ -40,28 +34,24 @@ The first change that someone wishes had been discussed before it was built. Mos
   (write "n/a — reason" where something does not apply; that is the evidence it was considered)
 ```
 
-**One step**: when any answer is yes, one reviewer reads the draft — Problem, Non-Goals, Decisions so far, and the two sections above — before implementation code is written. A comment on the branch is enough.
+**One step.** When any answer is yes, one reviewer reads the draft, `Problem`, `Non-Goals`, `Decisions` so far, and the two sections above, before implementation code is written. A comment on the branch is enough.
 
 **One line in the PR description**: which signals applied, or "none".
 
-## Rules
+## Using it
 
-| ID | Rule |
-|---|---|
-| **RS1** | Before implementation, the author MUST answer the three questions. |
-| **RS2** | If any answer is yes, the proposal MUST include `Rollout & rollback` and `Cross-cutting concerns`, and one reviewer MUST read the draft before implementation code is written. |
-| **RS3** | The PR description MUST state which signals applied, or "none". |
-| **RS4** | A change that reduces exposure in a sensitive area MAY be treated as signal-free; the reviewer MAY raise it. |
-| **RS5** | An internal interface whose consumers are all known and controlled by the same team MAY be treated as not a contract; the PR description MUST say so. |
+- The author answers the three questions before implementation, every time. Signal-free changes cost one line in the PR.
+- A yes brings the two sections and a reviewer before code. Ten minutes of a reviewer's time then is almost always repaid by not building the wrong thing.
+- Two judgment calls the questions leave open, so that they do not become a rubric: a change that *reduces* exposure in a sensitive area may be treated as signal-free (the reviewer may raise it), and an internal interface whose consumers are all known and controlled by the same team may be treated as not a contract (the PR description says so).
 
-## Parameters
+## Knobs
 
 Reviewers on a signal (default 1). Review turnaround (default one business day).
 
 ## Cost
 
-Signal-free changes: one line in the PR. Changes with a signal: two sections and ten minutes of a reviewer's time before code — almost always repaid by not building the wrong thing.
+Signal-free changes: one line in the PR. Changes with a signal: two sections and ten minutes of a reviewer's time before code.
 
-## Remove
+## Removing it
 
 Delete the questions and the two sections from the template. Proposals already carrying the sections remain valid. Without this pattern or `sizing-tiers` the practice has no sizing beyond "does behavior change?", which is a legitimate choice only for small, low-risk codebases.

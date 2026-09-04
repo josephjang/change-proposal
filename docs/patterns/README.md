@@ -1,101 +1,78 @@
 # Patterns
 
-The core (`../concept.md`, `../rules.md`) is complete and small. Everything a team might want beyond it is a **pattern**: an optional addition that can be adopted, parameterized and removed on its own. This catalog lists them, says how they combine, and gives example compositions.
+The [guide](../guide.md) describes a complete practice. Everything here is optional: something a team may add when it meets the situation the pattern names. None is assumed by the guide, none is required, and each can be dropped again.
 
-> **Status: candidates.** Every card here was specified before anyone met its signal in the field, and keeps its place only as real adoptions test it. Expect cards to change or leave.
+> **Status: candidates.** Every pattern here was written before anyone met its situation in the field. They are kept as a shelf of thought-through answers, not as a menu to work through, and whether "patterns" is the right way to extend the practice at all is one of the open questions named in the [README](../../README.md). Expect entries to change or leave.
 
-## What a pattern is
+## By the question they answer
 
-Every pattern card has the same parts:
-
-- **Intent** — the one problem it solves.
-- **Signal** — the observable situation that says it is time to adopt it. A pattern without a signal is ceremony; none is listed here.
-- **Adds** — sections (with their label), front-matter fields, steps, documents, or tooling requirements. Section text is given in the card, so the card is all a team needs.
-- **Rules** — the pattern's own rules, with ids, in the same MUST/SHOULD/MAY form as the core.
-- **Requires / Combines with / Conflicts with**.
-- **Cost** — what every change pays while the pattern is on.
-- **Remove** — how, and what happens to proposals written under it (almost always: nothing; they remain valid).
-
-## Catalog
-
-| Pattern | Intent | Signal | Adds |
-|---|---|---|---|
-| [`risk-signals`](risk-signals.md) | Pre-code review and a rollout block for contract, irreversible and sensitive-area changes | The first change someone wishes had been discussed before it was built | Three questions; `Rollout & rollback`, `Cross-cutting concerns`; a reviewer before code |
-| [`proposal-metadata`](proposal-metadata.md) | Front matter: owner, status, links, tags | Proposals need to be found by something other than date, or a change spans several PRs | Front matter block and fields; `status` |
-| [`supersession`](supersession.md) | Merged proposals are immutable and reversed by new ones | Someone wants to "fix" a merged proposal | `supersedes` / `superseded_by`; a reversal procedure |
-| [`human-ai-split`](human-ai-split.md) | Assistants draft; people approve the judgment; drafts are marked until then | An assistant is used to write any part of a proposal | Section classification; `<!-- ai-draft -->` marker; an instruction to assistants |
-| [`verification`](verification.md) | What was checked, observed, and not checked, in the proposal | "Was this tested?" has no findable answer after merge, or an unchecked path surfaces as a surprise | `Verification` |
-| [`evidence-verification`](evidence-verification.md) | Verification is commands and observations only | An assistant implements or tests | The strict section shape; a reviewer test; an agent rule |
-| [`before-after`](before-after.md) | Describe what changed for readers who will not open the diff | Proposals are read months later or by agents, and the change cannot be reconstructed | `Change` (before / after / where) |
-| [`sizing-tiers`](sizing-tiers.md) | Explicit T0–T3 tiers with a rubric | Recurring after-the-fact arguments about how much review a change deserved | `tier` field; rubric; per-tier caps |
-| [`design-first-review`](design-first-review.md) | A docs-only PR reaches `accepted` before implementation | Risky changes arrive as finished code and reviewers cannot push back | `accepted` status; `Open questions`; two-stage flow |
-| [`spike-then-spec`](spike-then-spec.md) | Build to learn, then write the proposal | Proposals are written to justify prototypes that already exist | Three rules; `abandoned` status |
-| [`living-docs-bridge`](living-docs-bridge.md) | Each risky change names the current-state documents it updated | "How does this work today?" needs several proposals | `Living docs` |
-| [`decision-promotion`](decision-promotion.md) | Decisions that outlive a change move to decision records | The same decision is cited from three or more proposals | `docs/decisions/`; a record template |
-| [`initiative-umbrella`](initiative-umbrella.md) | Brief + design + child proposals for multi-week work | A month-plus, multi-team initiative starts | Initiative directory; brief and design documents; `parent` |
-| [`outcome-review`](outcome-review.md) | Compare declared metrics with actuals after launch | Metrics are declared and never revisited | `outcome.md`; a schedule |
-| [`agent-context`](agent-context.md) | Coding agents read merged proposals as constraints | An agent rebuilds a rejected alternative or does a non-goal | An agent instruction block; `touches` vocabulary |
-| [`agent-skills`](agent-skills.md) | Skills for Claude Code and Codex that do the mechanical parts | The same instructions are pasted into every session | Skill specifications (what each must do) |
-| [`lint-gate`](lint-gate.md) | CI enforces the mechanical rules | A proposal merged with markers, or a behavior change merged without one | A lint specification; enforcement levels |
-| [`multilingual-records`](multilingual-records.md) | Proposals in a non-English language stay machine-readable | The team writes in more than one language | A heading rule; invariants |
-
-## Section labels
-
-One table for the core and every pattern. No pattern renames a section; a proposal grows by adding rows from this table.
-
-| Label | Introduced by | Replaces |
+| When you find yourself asking… | Look at | It adds |
 |---|---|---|
-| `Summary` | core (optional) | |
-| `Problem` | core | |
-| `Goals` | core | |
-| `Non-Goals` | core | |
-| `Requirements` | core | |
-| `Decisions` | core | |
-| `Product Decisions`, `Technical Decisions` | core | `Decisions` (together, when both kinds are present) |
-| `Risks` | core | |
+| Should this change have been discussed before it was built? | [`risk-signals`](risk-signals.md) | Three questions; `Rollout & rollback` and `Cross-cutting concerns`; a reviewer before code |
+| How much review does a change deserve? We keep arguing after the fact. | [`sizing-tiers`](sizing-tiers.md) | T0–T3 tiers with a rubric |
+| Can a reviewer push back on a design before the code exists? | [`design-first-review`](design-first-review.md) | An `accepted` stage reached through a docs-only PR; `Open questions` |
+| We built a prototype first. When does it need a proposal? | [`spike-then-spec`](spike-then-spec.md) | Build-to-learn as a first-class path; `abandoned` notes |
+| Was this actually tested? Nobody can find the answer. | [`verification`](verification.md) | `Verification`: what was checked, and what was not |
+| An assistant says it verified something. Did it? | [`evidence-verification`](evidence-verification.md) | Verification as commands and observations only |
+| Who actually decided this? An assistant drafted it. | [`human-ai-split`](human-ai-split.md) | Draft markers; approval by a person, section by section |
+| What did this change do? I do not want to open the diff. | [`before-after`](before-after.md) | `Change`: before, after, where |
+| How do I find proposals by owner, area or status? | [`proposal-metadata`](proposal-metadata.md) | Front matter: owner, status, links, tags |
+| Someone wants to "fix" a merged proposal. | [`supersession`](supersession.md) | Merged proposals stay as written and are reversed by new ones |
+| How does this work today? I had to read five proposals. | [`living-docs-bridge`](living-docs-bridge.md) | `Living docs`: which current-state documents this change updated |
+| Where is it written that we always do X? | [`decision-promotion`](decision-promotion.md) | Decision records for decisions that outlive a change |
+| This is a quarter of work across teams, not one change. | [`initiative-umbrella`](initiative-umbrella.md) | A brief, a design, and ordinary proposals under them |
+| We declared a metric. Did it move? | [`outcome-review`](outcome-review.md) | An outcome review after launch |
+| An agent just rebuilt something a proposal rejected. | [`agent-context`](agent-context.md) | Merged proposals as constraints agents read first |
+| We paste the same instructions into every agent session. | [`agent-skills`](agent-skills.md) | What a set of skills should do |
+| A proposal merged with draft markers still in it. | [`lint-gate`](lint-gate.md) | Mechanical checks in CI |
+| We write in Korean. Will tooling still find the sections? | [`multilingual-records`](multilingual-records.md) | A heading convention that keeps section names machine-readable |
+
+## How they fit together
+
+Each pattern adds something to a proposal or to the process around it: a section, a front-matter field, a step, a document, a tooling requirement. None changes what the guide describes, and none rewrites another's addition. Section names come from one shared list (below) so that a proposal written under several patterns still reads as one document.
+
+A few patterns lean on another. `supersession`, `sizing-tiers`, `design-first-review`, `initiative-umbrella` and `agent-context` need the front matter that `proposal-metadata` adds; `evidence-verification` tightens the section that `verification` adds; `design-first-review` and `living-docs-bridge` need `risk-signals` or `sizing-tiers` to know which proposals they apply to. Each page says what it needs. One real incompatibility exists: `agent-context` assumes merged proposals are not edited in place (which is what `supersession` provides), because an agent cannot otherwise tell which proposals still hold.
+
+Where a pattern has a knob (a word cap, a reviewer count, a turnaround), its page names it and gives a default.
+
+A repository says which patterns it uses in a sentence at the top of its `docs/changes/README.md`:
+
+> This repository uses change proposals with `risk-signals`, `verification`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Record language: English.
+
+That sentence is the whole mechanism. Patterns that bring tooling (`lint-gate`, `agent-skills`) may turn it into a configuration file; the sentence remains the version people read. Dropping a pattern is deleting it from the sentence; proposals already written under it stay as they are.
+
+## Sections a proposal may carry
+
+The guide's sections and every section a pattern adds, in one place. A proposal grows by adding rows from this list; no pattern renames one.
+
+| Section | From | Notes |
+|---|---|---|
+| `Summary` | guide (optional) | |
+| `Problem`, `Goals`, `Non-Goals`, `Requirements`, `Decisions`, `Risks` | guide | `Decisions` may be split into `Product Decisions` and `Technical Decisions` |
 | `Change` | `before-after` | |
 | `Verification` | `verification` | |
-| `Rollout & rollback` | `risk-signals` | |
-| `Cross-cutting concerns` | `risk-signals` | |
+| `Rollout & rollback`, `Cross-cutting concerns` | `risk-signals` | |
 | `Open questions` | `design-first-review` | |
 | `Living docs` | `living-docs-bridge` | |
-| `Current structure`, `Design`, `Milestones` | `initiative-umbrella` (brief and design documents only) | |
+| `Current structure`, `Design`, `Milestones` | `initiative-umbrella` | brief and design documents only |
 | `Outcome` | `outcome-review` | |
 
-Non-English labels are the `multilingual-records` pattern.
+Headings in another language are the `multilingual-records` pattern.
 
-## Composition
+## Starting points
 
-1. **The core is always on.** Every pattern requires it.
-2. **Patterns are additive.** Each adds sections, fields, steps or rules; none rewrites another's. The shared label table is what makes this hold.
-3. **Requirements are declared on the card.** Most patterns need only the core. Some need another pattern (for example `supersession` needs `proposal-metadata` for its `status` field, and `design-first-review` needs `risk-signals` or `sizing-tiers` to know which proposals get the stage).
-4. **Conflicts are declared, not discovered.** There is one: editing merged proposals in place (no `supersession`) is incompatible with `agent-context`, because agents cannot tell which proposals are current.
-5. **A repository's rules are the core rules plus the rules of its adopted patterns.** Nothing else binds.
-6. **Removal is legitimate.** Each card says how. Proposals written under a removed pattern stay as they are.
-7. **Parameters belong to the adopter.** Where a pattern has a knob (a word cap, a reviewer count, a review SLA), the card names it and gives a default; the value is recorded in the repository's `docs/changes/README.md`.
-
-## Declaring a composition
-
-A repository states its composition in prose at the top of `docs/changes/README.md`:
-
-> This repository uses the change-proposal core with `risk-signals`, `verification`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Record language: English.
-
-That is the whole mechanism. Patterns that bring tooling (`lint-gate`, `agent-skills`) may formalize the same statement into a configuration file; the prose remains the source of truth for people.
-
-## Example compositions
-
-Starting points, not prescriptions. Each is the core plus the listed patterns.
+Not prescriptions; combinations that hang together.
 
 | Situation | Patterns | Notes |
 |---|---|---|
-| One person or a very small team, assistants used daily | `risk-signals`, `verification`, `human-ai-split`, `evidence-verification` | The smallest composition that keeps AI drafting honest. |
+| One person or a very small team, assistants used daily | `risk-signals`, `verification`, `human-ai-split`, `evidence-verification` | The smallest combination that keeps AI drafting honest. |
 | A product team with a few shared contracts | + `proposal-metadata`, `supersession`, `agent-context`, `living-docs-bridge`, `spike-then-spec` | Merged proposals become agent constraints; state documents stay honest. |
 | A platform team whose output is contracts | + `sizing-tiers`, `design-first-review`, `decision-promotion`, `lint-gate` | Pre-code review is enforceable; standards have a home. |
 | Several teams running quarterly initiatives | + `initiative-umbrella`, `outcome-review` | Work larger than one proposal, with its outcome revisited. |
-| Any of the above, in Korean | + `multilingual-records` | Headings carry the English label; everything machine-facing stays English. |
+| Any of the above, in Korean | + `multilingual-records` | Headings carry the English name; everything machine-facing stays English. |
 
-Moving between compositions is adding or removing lines in `docs/changes/README.md`. Nothing already written changes.
+Moving between combinations is editing the sentence in `docs/changes/README.md`. Nothing already written changes.
 
-## Proposing a new pattern
+## Adding one
 
-A new pattern is a change to this repository and arrives as a proposal (`../../CONTRIBUTING.md`). It must show the signal — a real situation the existing patterns did not handle — and its per-change cost, and it must use labels from the table above or explain why the table must grow. A pattern that cannot name a signal is declined.
+A new pattern arrives as a change to this repository ([CONTRIBUTING](../../CONTRIBUTING.md)). It should say what situation it answers, ideally one somebody actually met, what it adds, and what every change pays while it is on. A pattern that cannot name its situation is ceremony looking for a home.

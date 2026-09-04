@@ -1,20 +1,14 @@
 # Pattern: living-docs-bridge
 
-- **Requires**: core; one of `risk-signals` or `sizing-tiers` (to define which proposals must carry the section)
-- **Combines with**: `supersession` (immutable ledger + maintained state is the intended pair), `agent-context` (the agent instruction file is a living document), `lint-gate`
-- **Conflicts with**: —
+Keeps the documents that describe *current state* honest by making every change that alters the state say which of them it updated.
 
-## Intent
+**When.** Someone answers "how does this work today?" by reading several proposals in order, or a README is found describing a structure that stopped existing three proposals ago.
 
-Keep the documents that describe *current state* honest by making every change that alters the state say which of them it updated.
+**Needs.** One of `risk-signals` or `sizing-tiers`, to define which proposals carry the section. Goes with `supersession` (immutable ledger plus maintained state is the intended pair), `agent-context` (the agent instruction file is a living document), `lint-gate`.
 
-## Signal
+## What it adds
 
-Someone answers "how does this work today?" by reading several proposals in order, or a README is found describing a structure that stopped existing three proposals ago.
-
-## Adds
-
-**One section**, required for proposals with a risk signal (or tier ≥ T2) and optional otherwise, placed last:
+**One section**, expected in proposals with a risk signal (or tier T2 and above) and optional otherwise, placed last:
 
 ```
 ## Living docs
@@ -23,22 +17,20 @@ Someone answers "how does this work today?" by reading several proposals in orde
 - or: no update needed — (reason)
 ```
 
-**A reviewer step**: check the list against the document changes in the pull request. A listed document that did not change, or a changed document that is not listed, is a review comment.
+**A reviewer step.** Check the list against the document changes in the pull request. A listed document that did not change, or a changed document that is not listed, is a review comment.
 
 **A minimum set of living documents** the repository keeps: a README, an architecture note, an agent instruction file if agents work there, runbooks where operations exist. Living documents may cite the proposal that caused a structural change.
 
-## Rules
+## Using it
 
-| ID | Rule |
-|---|---|
-| **LD1** | A proposal with a risk signal (or tier ≥ T2) MUST include `Living docs`, listing updated current-state documents by path or "no update needed" with the reason. |
-| **LD2** | The reviewer MUST check the list against the document changes in the pull request. |
-| **LD3** | The repository SHOULD keep at least a README, an architecture note, and — where applicable — an agent instruction file and runbooks. |
+- A proposal with a risk signal (or tier T2 and above) includes `Living docs`, listing the updated current-state documents by path, or "no update needed" with the reason.
+- The reviewer checks the list against what the pull request actually touched.
+- The living documents have to exist for the section to mean anything.
 
 ## Cost
 
-One or two lines per risky change and one reviewer glance. The real cost is that the living documents must exist.
+One or two lines per risky change and one reviewer glance. The real cost is maintaining the living documents themselves.
 
-## Remove
+## Removing it
 
 Drop the section. Living documents will drift; that is the trade.

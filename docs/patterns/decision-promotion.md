@@ -1,18 +1,12 @@
 # Pattern: decision-promotion
 
-- **Requires**: core
-- **Combines with**: `agent-context` (accepted decision records are agent constraints), `supersession` (decision records follow the same immutability), `proposal-metadata` (records link back by id)
-- **Conflicts with**: —
+Separates decisions that belong to one change from decisions that constrain every future change, and gives the latter a home that is not buried in a proposal about something else.
 
-## Intent
+**When.** The same decision is cited from three or more proposals, or a newcomer asks "where is it written that we do X?" and the answer is "in the proposal about Y".
 
-Separate decisions that belong to one change from decisions that constrain every future change, and give the latter a home that is not buried in a proposal about something else.
+**Goes with.** `agent-context` (accepted decision records are agent constraints), `supersession` (decision records follow the same immutability), `proposal-metadata` (records link back by id).
 
-## Signal
-
-The same decision is cited from three or more proposals, or a newcomer asks "where is it written that we do X?" and the answer is "in the proposal about Y".
-
-## Adds
+## What it adds
 
 **A directory**: `docs/decisions/`, holding decision records named `NNNN-<slug>.md`.
 
@@ -24,7 +18,7 @@ Status: accepted            (proposed | accepted | superseded | deprecated)
 Origin: docs/changes/YYYY-MM-DD-<slug>.md   (the proposal where it was first made)
 
 ## Context
-(the situation that made the decision necessary — 2–4 sentences; evidence lives in the origin proposal)
+(the situation that made the decision necessary, 2–4 sentences; evidence lives in the origin proposal)
 
 ## Decision
 (one paragraph, imperative: "When doing X, use Y. Do not use Z.")
@@ -38,22 +32,20 @@ Origin: docs/changes/YYYY-MM-DD-<slug>.md   (the proposal where it was first mad
 - Exceptions: (who approves)
 ```
 
-**A promotion step**: when a proposal's `Decisions` contains a decision that is really a standard, the author writes the record in the same pull request and replaces the decision text with `→ ADR-NNNN`. The record cites the proposal as its origin.
+**A promotion step.** When a proposal's `Decisions` contains a decision that is really a standard, the author writes the record in the same pull request and replaces the decision text with `→ ADR-NNNN`. The record cites the proposal as its origin.
 
 **A constraint for agents** (with `agent-context`): `accepted` records are repository-wide constraints.
 
-## Rules
+## Using it
 
-| ID | Rule |
-|---|---|
-| **DP1** | A decision that constrains future changes beyond the one that made it SHOULD be promoted to a decision record. |
-| **DP2** | The proposal's `Decisions` MUST reference the record it was promoted to, and the record MUST cite the originating proposal. |
-| **DP3** | Decision records MUST NOT be edited once `accepted`; they are superseded like proposals. |
+- The test for "standard or local?" is whether the decision would constrain a change in an unrelated area. If yes, promote it.
+- The proposal points at the record and the record cites the proposal, so either can be found from the other.
+- Records are not edited once `accepted`; they are superseded, like proposals.
 
 ## Cost
 
-An occasional extra file, and the judgment "standard or local?" — the test is whether it would constrain a change in an unrelated area.
+An occasional extra file, and the judgment "standard or local?".
 
-## Remove
+## Removing it
 
 Stop promoting. Existing records remain valid.

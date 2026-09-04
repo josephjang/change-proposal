@@ -5,7 +5,8 @@
      repository's own document marker (an id scheme, a date) if one exists.
      Written by a person, or approved by a person section by section. Delete any section with nothing to say.
      Reference code by path; never paste schemas, signatures or file lists.
-     Sections beyond these come from patterns your repository has adopted (docs/changes/README.md). -->
+     Sections beyond these come from the patterns your repository uses (listed at the top of docs/changes/README.md).
+     What each section is for, and why: docs/guide.md. -->
 
 ## Summary
 
@@ -20,21 +21,21 @@
 
 ## Goals
 
-<!-- End states — "X is possible", not "build X". At least one. -->
+<!-- End states — "X is possible", not "build X". -->
 
 - 
 
 ## Non-Goals
 
 <!-- What this change deliberately does not do, and why — decided at scoping or discovered
-     during the work. At least one. -->
+     during the work. -->
 
 - 
 
 ## Requirements
 
-<!-- Statements judgeable true or false, at least one — the stopping condition: when every
-     one is true, the work is done. Ids are stable; never renumber. -->
+<!-- Statements judgeable true or false — the stopping condition: when every one is true,
+     the work is done. Ids are stable; never renumber. -->
 
 - R1: 
 - R2: 

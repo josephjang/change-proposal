@@ -1,22 +1,16 @@
 # Pattern: multilingual-records
 
-- **Requires**: core
-- **Combines with**: `proposal-metadata` (front matter stays English), `agent-context` (agents search by English labels and tags whatever the body language), `lint-gate` (heading resolution is checked), `human-ai-split` (assistants do not translate a person's text)
-- **Conflicts with**: —
+Lets a team write proposals in its own language while everything a machine or a cross-team reader relies on, section names, front matter, tags, file names, stays English.
 
-## Intent
+**When.** The team writes, or wants to write, proposals in a language other than English; or a repository is shared between teams writing in different languages.
 
-Let a team write proposals in its own language while everything a machine or a cross-team reader relies on — section labels, front matter, tags, file names — stays English.
+**Goes with.** `proposal-metadata` (front matter stays English), `agent-context` (agents search by English names and tags whatever the body language), `lint-gate` (heading resolution is checked), `human-ai-split` (assistants do not translate a person's text).
 
-## Signal
-
-The team writes, or wants to write, proposals in a language other than English; or a repository is shared between teams writing in different languages.
-
-## Adds
+## What it adds
 
 **A record language**, declared once in `docs/changes/README.md` (`Record language: ko`).
 
-**A heading rule.** A non-English heading carries the English label in parentheses after the local label:
+**A heading convention.** A non-English heading carries the English section name in parentheses after the local one:
 
 ```
 ## 문제 (Problem)
@@ -24,11 +18,11 @@ The team writes, or wants to write, proposals in a language other than English; 
 ## 검증 (Verification)
 ```
 
-English headings carry nothing extra. Readers use the local label; tooling and agents use the parenthesis.
+English headings carry nothing extra. Readers use the local name; tooling and agents use the parenthesis.
 
-**A label table** for the language — the local name for each label in `docs/patterns/README.md`. Korean is provided:
+**A table of local names** for the section headings. Korean is provided here; another language adds its own column.
 
-| Label | Korean |
+| Section | Korean |
 |---|---|
 | Problem | 문제 |
 | Non-Goals | 비목표 |
@@ -48,26 +42,18 @@ English headings carry nothing extra. Readers use the local label; tooling and a
 | Current structure · Design · Milestones | 현재 구조 · 설계 · 마일스톤 |
 | Outcome | 결과 |
 
-**Four invariants**, regardless of body language: front-matter keys and values, `status`, file names and slugs, `touches` tags are English.
+**A template** in the record language, created by the adopter from the shipped one.
 
-**A translation rule**: merged proposals are never translated — a translation would be a second, unfrozen copy.
+## Using it
 
-**A template** in the record language, created by the adopter from the core template.
-
-## Rules
-
-| ID | Rule |
-|---|---|
-| **ML1** | The record language MUST be declared in the composition. |
-| **ML2** | Front-matter keys and values, `status`, file names, and `touches` MUST be English regardless of the record language. |
-| **ML3** | A heading in a non-English proposal MUST carry the English label in parentheses after the local label. English headings carry nothing extra. |
-| **ML4** | A merged proposal MUST NOT be translated. |
-| **ML5** | An assistant MUST draft in the record language and MUST NOT translate a person's text. |
+- Regardless of body language, four things stay English: front-matter keys and values, `status`, file names and slugs, `touches` tags.
+- A merged proposal is never translated. A translation would be a second, unfrozen copy of a record.
+- An assistant drafts in the record language and does not translate a person's text.
 
 ## Cost
 
 A parenthesis per heading in non-English proposals.
 
-## Remove
+## Removing it
 
-Set the record language to English. Existing non-English proposals remain valid — the heading rule already made them machine-readable.
+Set the record language to English. Existing non-English proposals remain valid; the heading convention already made them machine-readable.

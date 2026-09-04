@@ -1,24 +1,19 @@
 # Contributing
 
-This repository uses the practice on itself. Its composition is stated at the top of `docs/changes/README.md`; its proposals live in `docs/changes/`.
+This repository uses the practice on itself. Its proposals live in `docs/changes/`; what it uses beyond the [guide](docs/guide.md) is stated at the top of `docs/changes/README.md`.
 
 ## What needs a proposal
 
-| Change | Proposal? |
-|---|---|
-| The concept, a principle, or a core rule changed in substance | Yes — every adopter depends on it (risk signal: contract) |
-| A pattern added or removed, or its signal / requires / conflicts / rules changed | Yes — contract |
-| A label added to the table in `docs/patterns/README.md` | Yes — contract |
-| The core template changed in what it asks for | Yes — contract |
-| Wording, examples, typos | No — PR description only |
+A change to what the practice asks for: when a proposal is needed, which sections it has and what they hold, what a pattern adds or when it applies, what the template asks for, or a new section name. Every adopter inherits such a change, so its reasoning is worth a record.
 
-## Procedure
+Wording, examples and typos do not; the PR description is enough.
 
-1. Read the existing proposals in `docs/changes/` — the reasoning behind the current rule or pattern is there.
-2. Write the proposal from `templates/change-proposal.md`. Its `Problem` must name the situation the current practice mishandled; a proposal that starts from a solution is sent back.
-3. For a new pattern: show the signal, the per-change cost, and that it uses labels from the table — or why the table must grow.
-4. Because these are contract changes, a reviewer reads the draft before the wording is finalized (`risk-signals`).
+## How
+
+1. Read the existing proposals in `docs/changes/`; the reasoning behind the current shape is there.
+2. Start from `templates/change-proposal.md`. The `Problem` names the situation the current practice mishandled, ideally one somebody met. A proposal that starts from a solution is sent back.
+3. For a new pattern: name the situation it answers, what it adds, and what every change pays while it is on.
 
 ## Reviewing
 
-Beyond the core rules and the adopted patterns' rules, the reviewer asks one question of every substantive change: *which principle does this serve, and which does it cost?* A change that cannot answer is declined.
+The reviewer asks one question of every substantive change: *what does this make easier to understand or to do, and what does it cost?* A change that only adds a constraint, with no situation behind it, is declined. The practice is still too young to be tightened on anticipation.

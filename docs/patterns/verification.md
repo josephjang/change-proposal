@@ -1,18 +1,12 @@
 # Pattern: verification
 
-- **Requires**: core
-- **Combines with**: `evidence-verification` (fixes this section's strict form; requires this pattern), `human-ai-split` (`Verification` is a derived section), `lint-gate` (the "not checked" line is checked), `agent-skills` (`cp-finish` fills it)
-- **Conflicts with**: —
+Records in the proposal what was checked and what was observed, and what was *not* checked, which no pull request or tracker keeps.
 
-## Intent
+**When.** "Was this actually tested?" is asked after the merge and the answer lives only in CI logs or a chat scroll; or an unchecked path surfaces as a surprise because no record said it was not checked.
 
-Record in the proposal what was checked and what was observed — and what was *not* checked, which no pull request or tracker keeps.
+**Goes with.** `evidence-verification` (fixes this section's strict form), `human-ai-split` (`Verification` is a derived section), `lint-gate` (the "not checked" line is checked), `agent-skills` (`cp-finish` fills it).
 
-## Signal
-
-"Was this actually tested?" is asked after the merge and the answer lives only in CI logs or a chat scroll; or an unchecked path surfaces as a surprise because no record said it was not checked.
-
-## Adds
+## What it adds
 
 **One section**, placed after `Decisions`:
 
@@ -24,16 +18,15 @@ Record in the proposal what was checked and what was observed — and what was *
 
 The "not checked" half is the part nothing else records; the pull request and the tracker usually hold the rest. That asymmetry is why the section lives in the proposal.
 
-## Rules
+## Using it
 
-| ID | Rule |
-|---|---|
-| **V1** | `Verification` MUST state what was checked and what was observed, and MUST state what was not checked, with the reason. |
+- Say what was checked and what was observed, not what was done. "Ran the tests" is a claim; "14 passed, 9 new" is an observation.
+- Always say what was not checked, and why. That line is the reason the section exists.
 
 ## Cost
 
-A few lines written at finish time, when the answer is freshest — plus the discipline of admitting what was not checked.
+A few lines written at finish time, when the answer is freshest, plus the discipline of admitting what was not checked.
 
-## Remove
+## Removing it
 
 Drop the section from the template. What was verified reverts to the PR description; what was not checked reverts to nowhere, which is the reason to keep it.
