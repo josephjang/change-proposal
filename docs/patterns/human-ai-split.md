@@ -14,37 +14,37 @@ An assistant is used to write any part of a proposal.
 
 ## Adds
 
-**A classification of sections.**
+**A classification of sections.** An assistant may draft either kind; the classification says what a person must do before the marker comes off.
 
-| Judgment — a person writes or confirms | Derived — an assistant may draft |
+| Judgment — a person decides | Derived — a person reads |
 |---|---|
 | `Problem`, `Goals`, `Non-Goals`, `Requirements`, `Decisions` (or `Product Decisions` / `Technical Decisions`), `Risks`, the rollback line of `Rollout & rollback` | `Change`, `Summary`, `Cross-cutting concerns`, `Verification` (only what was run — see `evidence-verification`), `Living docs` |
 
-For judgment sections the assistant **supplies material** — alternatives it tried, risks it noticed, a digest of the issue — and asks for the conclusion. It does not write the conclusion.
+A drafted judgment section must **expose its decision points** — what it assumed, which alternatives it considered and rejected — so the person approves a decision, not prose. The person makes it theirs by editing it, or by deciding it stands as written. For a derived section, reading is enough.
 
-**A marker.** `<!-- ai-draft -->` directly under every section an assistant drafted. A person removes it after reading; the act of removal is the confirmation. A marker left in a merged proposal is a defect.
+**A marker.** `<!-- ai-draft -->` directly under every section an assistant drafted. A person removes it — after deciding, for a judgment section; after reading, for a derived one. The removal commit is the per-section approval record. A marker left in a merged proposal is a defect.
 
 **A front-matter field** (with `proposal-metadata`): `ai_assisted: true | false`, for later analysis. Not a quality signal.
 
 **An instruction to assistants**, placed wherever the repository instructs them (its agent file, or the `agent-context` block):
 
-> Draft only the derived sections, and leave `<!-- ai-draft -->` under each. For judgment sections, offer material and ask; never write the conclusion. Never translate, rewrite or "improve" a person's text in a judgment section.
+> Leave `<!-- ai-draft -->` under every section you draft. When drafting a judgment section, state its decision points — what you assumed, which alternatives you rejected and why — and ask the person to decide or approve; never present settled-looking prose that hides an open decision. Never remove a marker. Never translate, rewrite or "improve" a person's text in a judgment section.
 
-**One line in the reviewer's checklist**: judgment sections were written by a person; no marker remains.
+**One line in the reviewer's checklist**: every judgment section was written or approved by a person; no marker remains.
 
 ## Rules
 
 | ID | Rule | Principle |
 |---|---|---|
-| **HA1** | A section drafted by an assistant MUST carry `<!-- ai-draft -->` until a person has read it. | P5 |
+| **HA1** | A section drafted by an assistant MUST carry `<!-- ai-draft -->` until a person has read it — for a judgment section, until the person has edited it or decided it stands. | P5 |
 | **HA2** | No marker MAY remain in a proposal at merge. | P5 |
-| **HA3** | An assistant MUST NOT author a judgment section as a conclusion. It MAY supply material and MUST ask the person for the conclusion. | P5 |
+| **HA3** | An assistant MAY draft any section. A drafted judgment section MUST expose its decision points — what was assumed, which alternatives were rejected — so the person approves a decision, not prose. | P5 |
 | **HA4** | An assistant MUST NOT translate, rewrite or improve a person's text in a judgment section. | P5 |
 | **HA5** | With `proposal-metadata`, `ai_assisted` SHOULD be set. | P5 |
 
 ## Cost
 
-A few minutes of reading per proposal, which the person should be spending anyway.
+A few minutes of deciding and reading per proposal, which the person should be spending anyway.
 
 ## Remove
 

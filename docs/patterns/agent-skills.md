@@ -19,7 +19,7 @@ The same multi-step instructions are being pasted into agent sessions repeatedly
 | Skill | Must do | Must not do |
 |---|---|---|
 | `cp-context` | Find proposals whose `touches` or paths overlap the task; classify by status; extract `Decisions` (split or not), `Non-Goals`, `Risks`; report *compatible / careful / would reverse* per constraint; stop and ask if the task would reverse one. | Summarize proposals it did not open; proceed silently on a reversal. |
-| `cp-draft` | Create the file at the right path from the repository's template; collect judgment sections by asking one question at a time and recording the person's words; draft derived sections with markers; add the sections the adopted patterns require; report what the person still owns. | Write a judgment section as a conclusion; remove a marker; translate a person's text. |
+| `cp-draft` | Create the file at the right path from the repository's template; draft sections with markers, exposing each judgment section's decision points and asking the person to decide or approve; add the sections the adopted patterns require; report what the person still owns. | Remove a marker; hide an open decision inside settled-looking prose; translate a person's text. |
 | `cp-size` | Answer "does behavior change?", then the three risk signals or the tier rubric, each with one line of reasoning; state the consequences (sections, pre-code review); produce the PR line. | Size by diff length, time, or who wrote the code. |
 | `cp-finish` | Fill `Change` from the diff; fill `Verification` only with commands run in the session and their output; move everything else to "Not done, and why"; list markers remaining, word count, living docs; prepare the PR description. | Describe an unrun check as verified; edit a person's text; edit a merged proposal. |
 | `cp-review` | Walk the core rules and the rules of adopted patterns; run the lint if present; report blocking and non-blocking comments with rule ids and questions for the author. | Fix the author's judgment sections; recommend adopting patterns inside a review. |
@@ -32,7 +32,7 @@ The same multi-step instructions are being pasted into agent sessions repeatedly
 | ID | Rule | Principle |
 |---|---|---|
 | **AS1** | A skill MUST read the repository's composition before acting and MUST NOT perform steps of a pattern the repository has not adopted. | P10 |
-| **AS2** | A skill MUST NOT remove a `<!-- ai-draft -->` marker, write a judgment section as a conclusion, or describe an unrun check as verified. | P5, P6 |
+| **AS2** | A skill MUST NOT remove a `<!-- ai-draft -->` marker, draft a judgment section without exposing its decision points, or describe an unrun check as verified. | P5, P6 |
 | **AS3** | A skill MUST NOT edit a proposal whose status is `implemented` or `superseded`, except `cp-supersede` setting the two permitted fields. | P4 |
 | **AS4** | A change to a skill MUST be recorded as a proposal whose `Verification` names the tool and version it was exercised in. | P6 |
 

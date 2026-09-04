@@ -48,13 +48,13 @@ The principles describe the whole practice, patterns included. Where a principle
 
 ## P5. Human authorship of judgment
 
-**Statement.** The judgment in a proposal — framing, boundaries, decisions and their reasons, what is accepted — is written or explicitly confirmed by a person. An assistant may supply material and draft what can be derived from evidence.
+**Statement.** The judgment in a proposal — framing, boundaries, decisions and their reasons, what is accepted — is written or explicitly approved by a person. An assistant may draft, but a drafted judgment is nobody's until a person has made it theirs.
 
 **Reasoning.** The value of a proposal is the judgment it records. An assistant can generate plausible judgment-shaped text, which turns the absence of a decision into the appearance of one. Later, nobody can tell the difference.
 
-**Implies.** The core says a person writes the proposal, and no more. The mechanics — which sections an assistant may draft, how drafts are marked, what agents are told — are `human-ai-split`.
+**Implies.** The core says a person writes the proposal or explicitly approves each section, and no more. The mechanics — how drafts are marked, how approval is recorded, what agents are told — are `human-ai-split`.
 
-**Tension.** The line between material and conclusion is not always crisp. When in doubt, the assistant asks.
+**Tension.** Approval of a fluent draft can degrade into skimming. Decision points made explicit — and a marker that waits for a person — are the counterweight.
 
 ## P6. Evidence, not claims
 

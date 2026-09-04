@@ -32,7 +32,7 @@ The word is chosen because the document's first job is to put an intent in front
 | **Decisions** | Only decisions that had alternatives. For each: what was chosen, what was rejected, and a reason of the kind that would change if the facts changed. Deleted if there were none. May be split into **Product Decisions** and **Technical Decisions** when both kinds are present: reversing a product decision changes what the team experiences or what a standard means; reversing a technical one changes only the code. |
 | **Risks** | Trade-offs accepted knowingly, with the reason. |
 
-**Authorship.** A person writes it. Whether and how an assistant helps is not defined by the core.
+**Authorship.** A person writes it, or explicitly approves each of its sections. How an assistant's drafts are marked and how approval is recorded is not defined by the core (`human-ai-split`).
 
 **Size.** One page. A section with nothing to say is deleted, not filled.
 
