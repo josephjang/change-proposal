@@ -31,12 +31,12 @@ docs/changes/YYYY-MM-DD-<slug>/
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **IU1** | An initiative MUST be a directory containing `brief.md` and `design.md`, sharing one id. | P7 |
-| **IU2** | Every child proposal MUST set `parent`, and `design.md` MUST list the children with their status. | P7 |
-| **IU3** | The brief MUST state an appetite and metrics with baseline, target and measurement method. | P2 |
-| **IU4** | The design MUST hold structure, contracts and decisions only; implementation detail belongs in child proposals and work breakdown in the tracker. | P2 |
+| ID | Rule |
+|---|---|
+| **IU1** | An initiative MUST be a directory containing `brief.md` and `design.md`, sharing one id. |
+| **IU2** | Every child proposal MUST set `parent`, and `design.md` MUST list the children with their status. |
+| **IU3** | The brief MUST state an appetite and metrics with baseline, target and measurement method. |
+| **IU4** | The design MUST hold structure, contracts and decisions only; implementation detail belongs in child proposals and work breakdown in the tracker. |
 
 ## Parameters
 

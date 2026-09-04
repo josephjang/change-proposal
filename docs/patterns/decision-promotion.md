@@ -44,11 +44,11 @@ Origin: docs/changes/YYYY-MM-DD-<slug>.md   (the proposal where it was first mad
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **DP1** | A decision that constrains future changes beyond the one that made it SHOULD be promoted to a decision record. | P2, P8 |
-| **DP2** | The proposal's `Decisions` MUST reference the record it was promoted to, and the record MUST cite the originating proposal. | P7 |
-| **DP3** | Decision records MUST NOT be edited once `accepted`; they are superseded like proposals. | P4 |
+| ID | Rule |
+|---|---|
+| **DP1** | A decision that constrains future changes beyond the one that made it SHOULD be promoted to a decision record. |
+| **DP2** | The proposal's `Decisions` MUST reference the record it was promoted to, and the record MUST cite the originating proposal. |
+| **DP3** | Decision records MUST NOT be edited once `accepted`; they are superseded like proposals. |
 
 ## Cost
 

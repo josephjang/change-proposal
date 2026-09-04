@@ -1,9 +1,9 @@
 # Change Proposal: [Change name]
 
-<!-- One page. Committed in the same pull request as the change, at docs/changes/YYYY-MM-DD-<slug>.md.
+<!-- Committed in the same pull request as the change, at docs/changes/YYYY-MM-DD-<slug>.md by default.
      The title prefix marks the type for a reader who sees only the document; replace it with your
      repository's own document marker (an id scheme, a date) if one exists.
-     Written by a person. Delete any section with nothing to say.
+     Written by a person, or approved by a person section by section. Delete any section with nothing to say.
      Reference code by path; never paste schemas, signatures or file lists.
      Sections beyond these come from patterns your repository has adopted (docs/changes/README.md). -->
 
@@ -33,7 +33,7 @@
 
 ## Requirements
 
-<!-- Two to four statements, each judgeable true or false — the stopping condition: when every
+<!-- Statements judgeable true or false, at least one — the stopping condition: when every
      one is true, the work is done. Ids are stable; never renumber. -->
 
 - R1: 

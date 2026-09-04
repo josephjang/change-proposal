@@ -28,10 +28,10 @@ The "Before" line is the part the diff cannot supply; it is where the core's Pro
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **BA1** | `Change` MUST state before, after and where. "Where" MUST be paths, not copied code. | P2 |
-| **BA2** | "Before" MUST include why the previous behavior was the way it was, when that is known; an inference MUST be marked as one. | P2 |
+| ID | Rule |
+|---|---|
+| **BA1** | `Change` MUST state before, after and where. "Where" MUST be paths, not copied code. |
+| **BA2** | "Before" MUST include why the previous behavior was the way it was, when that is known; an inference MUST be marked as one. |
 
 ## Cost
 

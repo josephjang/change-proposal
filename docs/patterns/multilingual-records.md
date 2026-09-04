@@ -56,13 +56,13 @@ English headings carry nothing extra. Readers use the local label; tooling and a
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **ML1** | The record language MUST be declared in the composition. | P7 |
-| **ML2** | Front-matter keys and values, `status`, file names, and `touches` MUST be English regardless of the record language. | P7 |
-| **ML3** | A heading in a non-English proposal MUST carry the English label in parentheses after the local label. English headings carry nothing extra. | P7 |
-| **ML4** | A merged proposal MUST NOT be translated. | P4 |
-| **ML5** | An assistant MUST draft in the record language and MUST NOT translate a person's text. | P5 |
+| ID | Rule |
+|---|---|
+| **ML1** | The record language MUST be declared in the composition. |
+| **ML2** | Front-matter keys and values, `status`, file names, and `touches` MUST be English regardless of the record language. |
+| **ML3** | A heading in a non-English proposal MUST carry the English label in parentheses after the local label. English headings carry nothing extra. |
+| **ML4** | A merged proposal MUST NOT be translated. |
+| **ML5** | An assistant MUST draft in the record language and MUST NOT translate a person's text. |
 
 ## Cost
 

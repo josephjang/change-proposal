@@ -9,7 +9,7 @@ The core (`../concept.md`, `../rules.md`) is complete and small. Everything a te
 Every pattern card has the same parts:
 
 - **Intent** — the one problem it solves.
-- **Signal** — the observable situation that says it is time to adopt it. A pattern without a signal is ceremony (P10); none is listed here.
+- **Signal** — the observable situation that says it is time to adopt it. A pattern without a signal is ceremony; none is listed here.
 - **Adds** — sections (with their label), front-matter fields, steps, documents, or tooling requirements. Section text is given in the card, so the card is all a team needs.
 - **Rules** — the pattern's own rules, with ids, in the same MUST/SHOULD/MAY form as the core.
 - **Requires / Combines with / Conflicts with**.
@@ -67,7 +67,7 @@ Non-English labels are the `multilingual-records` pattern.
 ## Composition
 
 1. **The core is always on.** Every pattern requires it.
-2. **Patterns are additive.** Each adds sections, fields, steps or rules; none rewrites another's. The shared label table (P7) is what makes this hold.
+2. **Patterns are additive.** Each adds sections, fields, steps or rules; none rewrites another's. The shared label table is what makes this hold.
 3. **Requirements are declared on the card.** Most patterns need only the core. Some need another pattern (for example `supersession` needs `proposal-metadata` for its `status` field, and `design-first-review` needs `risk-signals` or `sizing-tiers` to know which proposals get the stage).
 4. **Conflicts are declared, not discovered.** There is one: editing merged proposals in place (no `supersession`) is incompatible with `agent-context`, because agents cannot tell which proposals are current.
 5. **A repository's rules are the core rules plus the rules of its adopted patterns.** Nothing else binds.
@@ -78,7 +78,7 @@ Non-English labels are the `multilingual-records` pattern.
 
 A repository states its composition in prose at the top of `docs/changes/README.md`:
 
-> This repository uses the change-proposal core with `risk-signals`, `verification`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Word cap: one page.
+> This repository uses the change-proposal core with `risk-signals`, `verification`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Record language: English.
 
 That is the whole mechanism. Patterns that bring tooling (`lint-gate`, `agent-skills`) may formalize the same statement into a configuration file; the prose remains the source of truth for people.
 

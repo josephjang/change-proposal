@@ -20,11 +20,11 @@ Proposals are being written after the fact to rationalize prototypes, or authors
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **SP1** | Experimental work on a branch that never reaches the main branch needs no proposal. | P10 |
-| **SP2** | A proposal MUST exist before experimental code reaches the main branch, even behind a flag. With `design-first-review`, DF2 applies. | P3 |
-| **SP3** | A discarded spike SHOULD leave an `abandoned` note recording what was tried and what was learned. | P4 |
+| ID | Rule |
+|---|---|
+| **SP1** | Experimental work on a branch that never reaches the main branch needs no proposal. |
+| **SP2** | A proposal MUST exist before experimental code reaches the main branch, even behind a flag. With `design-first-review`, DF2 applies. |
+| **SP3** | A discarded spike SHOULD leave an `abandoned` note recording what was tried and what was learned. |
 
 ## Cost
 

@@ -26,9 +26,9 @@ The "not checked" half is the part nothing else records; the pull request and th
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **V1** | `Verification` MUST state what was checked and what was observed, and MUST state what was not checked, with the reason. | P6 |
+| ID | Rule |
+|---|---|
+| **V1** | `Verification` MUST state what was checked and what was observed, and MUST state what was not checked, with the reason. |
 
 ## Cost
 

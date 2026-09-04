@@ -35,12 +35,12 @@ Risky changes keep arriving as finished code and reviewers say they cannot push 
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **DF1** | A proposal with a risk signal (or tier ≥ T2) MUST reach `accepted` through a docs-only pull request before implementation code is merged. | P1, P3 |
-| **DF2** | Prototype code MUST NOT reach the main branch before `accepted`, unless behind a flag that is off by default. | P1 |
-| **DF3** | `Open questions` MUST be empty at `implemented`; answers MUST be moved into `Decisions` and the section deleted. | P2 |
-| **DF4** | A proposal with one signal and no alternatives MAY merge the design and implementation PRs together if the reviewer approves the document before the code. | P9 |
+| ID | Rule |
+|---|---|
+| **DF1** | A proposal with a risk signal (or tier ≥ T2) MUST reach `accepted` through a docs-only pull request before implementation code is merged. |
+| **DF2** | Prototype code MUST NOT reach the main branch before `accepted`, unless behind a flag that is off by default. |
+| **DF3** | `Open questions` MUST be empty at `implemented`; answers MUST be moved into `Decisions` and the section deleted. |
+| **DF4** | A proposal with one signal and no alternatives MAY merge the design and implementation PRs together if the reviewer approves the document before the code. |
 
 ## Parameters
 

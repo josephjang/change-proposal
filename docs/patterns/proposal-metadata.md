@@ -34,12 +34,12 @@ touches: []           # area tags, free-form until agent-context sets a vocabula
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **PM1** | A proposal MUST begin with front matter containing `title`, `status`, `owner`, `date`, `prs`, `touches`. Keys and values MUST be English. | P7 |
-| **PM2** | `status` MUST be `draft` or `implemented`, plus values introduced by adopted patterns. A proposal on the main branch whose work is complete MUST be `implemented`. | P3, P7 |
-| **PM3** | Each pull request that implements part of the proposal MUST append itself to `prs`. | P3 |
-| **PM4** | An `id`, when used, MUST be `CP-` followed by the file name without extension. | P7 |
+| ID | Rule |
+|---|---|
+| **PM1** | A proposal MUST begin with front matter containing `title`, `status`, `owner`, `date`, `prs`, `touches`. Keys and values MUST be English. |
+| **PM2** | `status` MUST be `draft` or `implemented`, plus values introduced by adopted patterns. A proposal on the main branch whose work is complete MUST be `implemented`. |
+| **PM3** | Each pull request that implements part of the proposal MUST append itself to `prs`. |
+| **PM4** | An `id`, when used, MUST be `CP-` followed by the file name without extension. |
 
 ## Cost
 

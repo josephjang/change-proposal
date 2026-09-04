@@ -29,12 +29,12 @@ An assistant implements or tests any part of a change. Also: a reviewer catches 
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **EV1** | `Verification` MUST list only commands that were executed with their observed results, and manual checks that were actually performed, with environment and observation. | P6 |
-| **EV2** | `Verification` MUST contain a "Not done, and why" entry. It MAY say "nothing" with a reason; it MUST NOT be omitted. | P6 |
-| **EV3** | A reviewer MUST reject a Verification section that reads as a claim rather than as evidence. | P6 |
-| **EV4** | An assistant that did not run a check MUST NOT describe it as verified. | P6 |
+| ID | Rule |
+|---|---|
+| **EV1** | `Verification` MUST list only commands that were executed with their observed results, and manual checks that were actually performed, with environment and observation. |
+| **EV2** | `Verification` MUST contain a "Not done, and why" entry. It MAY say "nothing" with a reason; it MUST NOT be omitted. |
+| **EV3** | A reviewer MUST reject a Verification section that reads as a claim rather than as evidence. |
+| **EV4** | An assistant that did not run a check MUST NOT describe it as verified. |
 
 ## Cost
 

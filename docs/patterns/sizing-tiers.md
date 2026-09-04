@@ -44,13 +44,13 @@ Recurring after-the-fact arguments — "this should have had more review", "this
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **ST1** | Front matter MUST carry `tier`, determined by the rubric. T0 means no proposal. | P1 |
-| **ST2** | The tier MUST be proposed by the author with one line of reasoning in the PR and confirmed by a reviewer. When unsure, the higher tier MUST be chosen; the reviewer MAY lower it. | P1 |
-| **ST3** | Raising a tier MUST be done by adding sections and changing `tier`; the file MUST NOT be moved. | P7 |
-| **ST4** | T2 and above MUST include `Summary`, `Change`, `Requirements`, `Rollout & rollback` and `Cross-cutting concerns`. | P1 |
-| **ST5** | Word caps per tier apply as recorded in the repository's composition. | P9 |
+| ID | Rule |
+|---|---|
+| **ST1** | Front matter MUST carry `tier`, determined by the rubric. T0 means no proposal. |
+| **ST2** | The tier MUST be proposed by the author with one line of reasoning in the PR and confirmed by a reviewer. When unsure, the higher tier MUST be chosen; the reviewer MAY lower it. |
+| **ST3** | Raising a tier MUST be done by adding sections and changing `tier`; the file MUST NOT be moved. |
+| **ST4** | T2 and above MUST include `Summary`, `Change`, `Requirements`, `Rollout & rollback` and `Cross-cutting concerns`. |
+| **ST5** | Word caps per tier apply as recorded in the repository's composition. |
 
 ## Parameters
 

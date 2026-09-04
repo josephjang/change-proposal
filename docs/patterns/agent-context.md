@@ -27,12 +27,12 @@ An agent — or a person new to the area — rebuilds an alternative a proposal 
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **AC1** | The repository MUST have an agent instruction file containing the block above (or its equivalent). | P3 |
-| **AC2** | Before changing code, an agent MUST search proposals whose `touches` overlap and MUST treat the judgment sections of `implemented` proposals as constraints; if it must violate one, it MUST tell the person first. | P5 |
-| **AC3** | An agent MUST treat `superseded` and `abandoned` proposals as history only. | P4 |
-| **AC4** | `touches` SHOULD use a declared vocabulary once the repository holds more than about thirty proposals. | P7 |
+| ID | Rule |
+|---|---|
+| **AC1** | The repository MUST have an agent instruction file containing the block above (or its equivalent). |
+| **AC2** | Before changing code, an agent MUST search proposals whose `touches` overlap and MUST treat the judgment sections of `implemented` proposals as constraints; if it must violate one, it MUST tell the person first. |
+| **AC3** | An agent MUST treat `superseded` and `abandoned` proposals as history only. |
+| **AC4** | `touches` SHOULD use a declared vocabulary once the repository holds more than about thirty proposals. |
 
 ## Cost
 

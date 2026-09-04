@@ -6,7 +6,7 @@
 
 ## Intent
 
-Catch the changes whose cost of being wrong is high — before the code is written — with three questions instead of a rubric, so that everything else stays one page.
+Catch the changes whose cost of being wrong is high — before the code is written — with three questions instead of a rubric, so that everything else stays small.
 
 ## Signal
 
@@ -46,13 +46,13 @@ The first change that someone wishes had been discussed before it was built. Mos
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **RS1** | Before implementation, the author MUST answer the three questions. | P1 |
-| **RS2** | If any answer is yes, the proposal MUST include `Rollout & rollback` and `Cross-cutting concerns`, and one reviewer MUST read the draft before implementation code is written. | P1 |
-| **RS3** | The PR description MUST state which signals applied, or "none". | P1 |
-| **RS4** | A change that reduces exposure in a sensitive area MAY be treated as signal-free; the reviewer MAY raise it. | P1 |
-| **RS5** | An internal interface whose consumers are all known and controlled by the same team MAY be treated as not a contract; the PR description MUST say so. | P1 |
+| ID | Rule |
+|---|---|
+| **RS1** | Before implementation, the author MUST answer the three questions. |
+| **RS2** | If any answer is yes, the proposal MUST include `Rollout & rollback` and `Cross-cutting concerns`, and one reviewer MUST read the draft before implementation code is written. |
+| **RS3** | The PR description MUST state which signals applied, or "none". |
+| **RS4** | A change that reduces exposure in a sensitive area MAY be treated as signal-free; the reviewer MAY raise it. |
+| **RS5** | An internal interface whose consumers are all known and controlled by the same team MAY be treated as not a contract; the PR description MUST say so. |
 
 ## Parameters
 

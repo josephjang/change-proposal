@@ -29,11 +29,11 @@ Someone answers "how does this work today?" by reading several proposals in orde
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **LD1** | A proposal with a risk signal (or tier ≥ T2) MUST include `Living docs`, listing updated current-state documents by path or "no update needed" with the reason. | P8 |
-| **LD2** | The reviewer MUST check the list against the document changes in the pull request. | P8 |
-| **LD3** | The repository SHOULD keep at least a README, an architecture note, and — where applicable — an agent instruction file and runbooks. | P8 |
+| ID | Rule |
+|---|---|
+| **LD1** | A proposal with a risk signal (or tier ≥ T2) MUST include `Living docs`, listing updated current-state documents by path or "no update needed" with the reason. |
+| **LD2** | The reviewer MUST check the list against the document changes in the pull request. |
+| **LD3** | The repository SHOULD keep at least a README, an architecture note, and — where applicable — an agent instruction file and runbooks. |
 
 ## Cost
 

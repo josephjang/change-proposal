@@ -35,12 +35,12 @@ Proposals declare metrics with baselines and targets and nobody looks at the act
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **OR1** | An initiative MUST have an outcome review at T+30; any proposal that declared a metric MAY. | P2 |
-| **OR2** | The review MUST compare each declared metric with its baseline and target, and MUST record which predictions held, which failed and why, and which accepted risks materialized. | P2 |
-| **OR3** | An outcome review is immutable once written, except that a T+90 section MAY be appended. | P4 |
-| **OR4** | "What we learned" MUST be written by a person. | P5 |
+| ID | Rule |
+|---|---|
+| **OR1** | An initiative MUST have an outcome review at T+30; any proposal that declared a metric MAY. |
+| **OR2** | The review MUST compare each declared metric with its baseline and target, and MUST record which predictions held, which failed and why, and which accepted risks materialized. |
+| **OR3** | An outcome review is immutable once written, except that a T+90 section MAY be appended. |
+| **OR4** | "What we learned" MUST be written by a person. |
 
 ## Parameters
 

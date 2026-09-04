@@ -29,12 +29,12 @@ The same multi-step instructions are being pasted into agent sessions repeatedly
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **AS1** | A skill MUST read the repository's composition before acting and MUST NOT perform steps of a pattern the repository has not adopted. | P10 |
-| **AS2** | A skill MUST NOT remove a `<!-- ai-draft -->` marker, draft a judgment section without exposing its decision points, or describe an unrun check as verified. | P5, P6 |
-| **AS3** | A skill MUST NOT edit a proposal whose status is `implemented` or `superseded`, except `cp-supersede` setting the two permitted fields. | P4 |
-| **AS4** | A change to a skill MUST be recorded as a proposal whose `Verification` names the tool and version it was exercised in. | P6 |
+| ID | Rule |
+|---|---|
+| **AS1** | A skill MUST read the repository's composition before acting and MUST NOT perform steps of a pattern the repository has not adopted. |
+| **AS2** | A skill MUST NOT remove a `<!-- ai-draft -->` marker, draft a judgment section without exposing its decision points, or describe an unrun check as verified. |
+| **AS3** | A skill MUST NOT edit a proposal whose status is `implemented` or `superseded`, except `cp-supersede` setting the two permitted fields. |
+| **AS4** | A change to a skill MUST be recorded as a proposal whose `Verification` names the tool and version it was exercised in. |
 
 ## Cost
 

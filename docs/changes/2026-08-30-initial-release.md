@@ -13,7 +13,7 @@ Teams that build with AI assistants produce code faster than they record why. Th
 
 ## Decisions
 
-- **D1: A four-section core, everything else a pattern.** A larger core — front matter, status, tiers, AI-draft markers — was rejected: each is needed only in situations some teams never meet, and a core that assumes them pays their cost on every change from day one. The test for every candidate was "could a team use the practice for a year without this?"; only the six sections, the optional summary, the trigger, the location, human authorship and the one-page rule failed it. Revisit if adopters consistently add the same pattern in their first week.
+- **D1: A four-section core, everything else a pattern.** A larger core — front matter, status, tiers, AI-draft markers — was rejected: each is needed only in situations some teams never meet, and a core that assumes them pays their cost on every change from day one. The test for every candidate was "could a team use the practice for a year without this?"; only the six sections, the optional summary, the trigger, the location and human authorship failed it. Revisit if adopters consistently add the same pattern in their first week.
 
 - **D2: Patterns carry their own rules.** One rules document tagged by pattern was rejected: it made the core look larger than it is and made readers of one pattern navigate sixty rules. Each card is self-contained; `docs/rules.md` holds ten core rules and the questions the core does not answer. Revisit if rules get duplicated across cards.
 
@@ -29,4 +29,4 @@ Teams that build with AI assistants produce code faster than they record why. Th
 ## Risks
 
 - Risk: without tooling, every rule is review-enforced; stretched reviewers will let markers and stale sections through. Accepted; the `lint-gate` card specifies the fix.
-- Risk: eighteen patterns may read as a menu rather than a shelf. Accepted; P10 and the example compositions (four patterns suffice) push the other way.
+- Risk: eighteen patterns may read as a menu rather than a shelf. Accepted; per-pattern signals and the example compositions (four patterns suffice) push the other way.

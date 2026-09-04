@@ -2,13 +2,13 @@
 
 ## Definition
 
-A **Change Proposal** (CP) records the intent and judgment behind one change to a product or system: why it is being made, what it deliberately leaves out, what was decided and what was rejected, and what risks were knowingly accepted. A person writes it, it lives in the repository, and it is merged in the same pull request as the change. A proposal is not bound to one shape — it can be a set of documents, and it need not be markdown. The core specifies the one form that exists today: a single one-page markdown file, defined below.
+A **Change Proposal** (CP) records the intent and judgment behind one change to a product or system: why it is being made, what it deliberately leaves out, what was decided and what was rejected, and what risks were knowingly accepted. A person writes it, it lives in the repository, and it is merged in the same pull request as the change. A proposal is not bound to one shape — it can be a set of documents, and it need not be markdown; C2 gives a set the same address as a directory. The single markdown file, defined below, is the only form specified in full today.
 
 Three properties define it.
 
 - **It records intent and judgment, not description.** Code, schemas and interfaces describe themselves. A proposal holds what code cannot recover.
 - **It travels with the change.** Same repository, same pull request, same review, same history. After the merge it is the change's record.
-- **It is small.** One page. Six sections and an optional summary. Anything that would make it larger is either description (and belongs in the code) or a pattern (and belongs in the catalog).
+- **It is small.** Six sections and an optional summary. Anything that would make it larger is either description (and belongs in the code) or a pattern (and belongs in the catalog).
 
 ## Why "proposal"
 
@@ -30,13 +30,13 @@ The word is chosen because the document's first job is to put an intent in front
 | **Problem** | What is wrong now, for whom, with the evidence. How it works today and why it was built that way, when that matters. Not "what we will build". |
 | **Goals** | End states — "X is possible", not "build X". At least one. |
 | **Non-Goals** | What this change deliberately does not do, and why — decided at scoping or discovered during the work. At least one. The line that stops the change from growing. |
-| **Requirements** | Two to four statements, each judgeable true or false — the stopping condition: when every one is true, the work is done and anything further is a new change. Optionally a metric with baseline, target and measurement method. |
+| **Requirements** | Statements judgeable true or false, at least one — the stopping condition: when every one is true, the work is done and anything further is a new change. Optionally a metric with baseline, target and measurement method. |
 | **Decisions** | Only decisions that had alternatives. For each: what was chosen, what was rejected, and a reason of the kind that would change if the facts changed. Deleted if there were none. May be split into **Product Decisions** and **Technical Decisions** when both kinds are present: reversing a product decision changes what the team experiences or what a standard means; reversing a technical one changes only the code. |
 | **Risks** | Trade-offs accepted knowingly, with the reason. |
 
 **Authorship.** A person writes it, or explicitly approves each of its sections. How an assistant's drafts are marked and how approval is recorded is not defined by the core (`human-ai-split`).
 
-**Size.** One page. A section with nothing to say is deleted, not filled.
+**Size.** A section with nothing to say is deleted, not filled.
 
 **Nothing else.** No front matter, no status field, no tier, no review stage, no marker, no configuration.
 
@@ -46,7 +46,7 @@ The core is complete as a practice: a team can use it alone for years. It is als
 
 | The core does not say… | …because that is the pattern |
 |---|---|
-| how big a change must be before it needs more than one page, or more than one reviewer | `risk-signals`, `sizing-tiers` |
+| how big a change must be before it needs more documentation, or more than one reviewer | `risk-signals`, `sizing-tiers` |
 | what happens to a proposal after it is merged — whether it may be edited, how it is reversed | `supersession` |
 | what a proposal's metadata is — owner, status, links, tags | `proposal-metadata` |
 | whether the proposal records what was verified | `verification` |

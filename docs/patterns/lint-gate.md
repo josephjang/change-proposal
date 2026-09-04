@@ -20,8 +20,7 @@ A proposal merged with `<!-- ai-draft -->` markers still in it, a behavior chang
 |---|---|---|
 | File at `docs/changes/YYYY-MM-DD-<slug>.md` | C2 | always |
 | Section labels from the table; core sections present | C3 | always |
-| `Goals` and `Non-Goals` non-empty; `Decisions` entries (split or not) have a rejected alternative and a reason; `Requirements` has two to four statements | C6, C7, C9, C10 | always (heuristic; warning only) |
-| Word cap | C8 | always (warning) |
+| `Goals` and `Non-Goals` non-empty; `Decisions` entries (split or not) have a rejected alternative and a reason; `Requirements` has at least one true/false statement | C6, C7, C8, C9 | always (heuristic; warning only) |
 | Front matter present, required fields, allowed `status` values, `id` agrees with the file name | PM1, PM2, PM4 | `proposal-metadata` |
 | No `<!-- ai-draft` marker in a proposal at `implemented` / `accepted` | HA2 | `human-ai-split` |
 | `Verification` present with a "not checked" statement | V1 | `verification` (heuristic; warning only) |
@@ -42,11 +41,11 @@ A proposal merged with `<!-- ai-draft -->` markers still in it, a behavior chang
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **LG1** | CI MUST run the lint over `docs/changes/` on every pull request. | P9 |
-| **LG2** | The enforcement level MUST be recorded in the composition and MAY differ per check. | P10 |
-| **LG3** | The lint MUST implement at least the checks marked "always" and the checks of every adopted pattern. | P9 |
+| ID | Rule |
+|---|---|
+| **LG1** | CI MUST run the lint over `docs/changes/` on every pull request. |
+| **LG2** | The enforcement level MUST be recorded in the composition and MAY differ per check. |
+| **LG3** | The lint MUST implement at least the checks marked "always" and the checks of every adopted pattern. |
 
 ## Cost
 

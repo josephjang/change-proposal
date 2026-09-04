@@ -34,13 +34,13 @@ A drafted judgment section must **expose its decision points** — what it assum
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **HA1** | A section drafted by an assistant MUST carry `<!-- ai-draft -->` until a person has read it — for a judgment section, until the person has edited it or decided it stands. | P5 |
-| **HA2** | No marker MAY remain in a proposal at merge. | P5 |
-| **HA3** | An assistant MAY draft any section. A drafted judgment section MUST expose its decision points — what was assumed, which alternatives were rejected — so the person approves a decision, not prose. | P5 |
-| **HA4** | An assistant MUST NOT translate, rewrite or improve a person's text in a judgment section. | P5 |
-| **HA5** | With `proposal-metadata`, `ai_assisted` SHOULD be set. | P5 |
+| ID | Rule |
+|---|---|
+| **HA1** | A section drafted by an assistant MUST carry `<!-- ai-draft -->` until a person has read it — for a judgment section, until the person has edited it or decided it stands. |
+| **HA2** | No marker MAY remain in a proposal at merge. |
+| **HA3** | An assistant MAY draft any section. A drafted judgment section MUST expose its decision points — what was assumed, which alternatives were rejected — so the person approves a decision, not prose. |
+| **HA4** | An assistant MUST NOT translate, rewrite or improve a person's text in a judgment section. |
+| **HA5** | With `proposal-metadata`, `ai_assisted` SHOULD be set. |
 
 ## Cost
 

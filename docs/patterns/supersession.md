@@ -28,12 +28,12 @@ status: superseded
 
 ## Rules
 
-| ID | Rule | Principle |
-|---|---|---|
-| **SU1** | The body of a proposal whose status is `implemented` or `superseded` MUST NOT be edited. The only permitted front-matter edits are `status` → `superseded` and `superseded_by`. | P4 |
-| **SU2** | A proposal that reverses a merged proposal MUST set `supersedes`, and the same pull request MUST set the old proposal's `status` and `superseded_by`. Partial reversals follow the same rule and say in `Problem` which part is reversed. | P4 |
-| **SU3** | A revert pull request MUST carry a proposal; the reverted proposal becomes `superseded`. | P4 |
-| **SU4** | Corrections of substance to a merged proposal MUST be made as a new proposal. Typos SHOULD be left alone. | P4 |
+| ID | Rule |
+|---|---|
+| **SU1** | The body of a proposal whose status is `implemented` or `superseded` MUST NOT be edited. The only permitted front-matter edits are `status` → `superseded` and `superseded_by`. |
+| **SU2** | A proposal that reverses a merged proposal MUST set `supersedes`, and the same pull request MUST set the old proposal's `status` and `superseded_by`. Partial reversals follow the same rule and say in `Problem` which part is reversed. |
+| **SU3** | A revert pull request MUST carry a proposal; the reverted proposal becomes `superseded`. |
+| **SU4** | Corrections of substance to a merged proposal MUST be made as a new proposal. Typos SHOULD be left alone. |
 
 ## Cost
 
