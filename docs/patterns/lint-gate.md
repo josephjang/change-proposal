@@ -20,7 +20,7 @@ A proposal merged with `<!-- ai-draft -->` markers still in it, a behavior chang
 |---|---|---|
 | File at `docs/changes/YYYY-MM-DD-<slug>.md` | C2 | always |
 | Section labels from the table; core sections present | C3 | always |
-| `Non-Goals` non-empty; `Decisions` entries (split or not) have a rejected alternative and a reason | C6, C7 | always (heuristic; warning only) |
+| `Goals` and `Non-Goals` non-empty; `Decisions` entries (split or not) have a rejected alternative and a reason; `Requirements` has two to four statements | C6, C7, C9, C10 | always (heuristic; warning only) |
 | Word cap | C8 | always (warning) |
 | Front matter present, required fields, allowed `status` values, `id` agrees with the file name | PM1, PM2, PM4 | `proposal-metadata` |
 | No `<!-- ai-draft` marker in a proposal at `implemented` / `accepted` | HA2 | `human-ai-split` |

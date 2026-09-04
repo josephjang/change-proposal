@@ -1,6 +1,6 @@
 # Pattern: initiative-umbrella
 
-- **Requires**: core, `proposal-metadata` (for `parent` and status), `design-first-review` (briefs and designs are reviewed before investment), `success-criteria` (a brief declares metrics)
+- **Requires**: core, `proposal-metadata` (for `parent` and status), `design-first-review` (briefs and designs are reviewed before investment)
 - **Combines with**: `sizing-tiers` (an initiative is T3), `outcome-review` (initiatives always get one), `living-docs-bridge`, `decision-promotion`
 - **Conflicts with**: —
 

@@ -22,7 +22,7 @@ The principles describe the whole practice, patterns included. Where a principle
 
 **Reasoning.** Copied description goes stale the day after merge and teaches readers to distrust the document. Judgment does not go stale; it is a fact about the past.
 
-**Implies.** No schemas, payloads, file lists or work breakdowns in a proposal. Rejection reasons of the kind that would change if the facts changed. The four required core sections are all judgment.
+**Implies.** No schemas, payloads, file lists or work breakdowns in a proposal. Rejection reasons of the kind that would change if the facts changed. The six required core sections are all judgment.
 
 **Tension.** Describing is easier than judging, and assistants are excellent at describing. Templates must refuse description.
 
@@ -72,7 +72,7 @@ The principles describe the whole practice, patterns included. Where a principle
 
 **Reasoning.** A shared vocabulary is what makes patterns composable: each adds sections without colliding, and a proposal grows in place when a change turns out larger than expected.
 
-**Implies.** Four required core labels plus the optional `Summary`; patterns add from the same table (`docs/patterns/README.md`). No pattern renames a section.
+**Implies.** Six required core labels plus the optional `Summary`; patterns add from the same table (`docs/patterns/README.md`). No pattern renames a section.
 
 **Tension.** A fixed vocabulary resists local naming preferences. That is a deliberate constraint.
 
@@ -108,7 +108,7 @@ The principles describe the whole practice, patterns included. Where a principle
 
 ## P11. Single source for judgment — others link, never restate
 
-**Statement.** The proposal is the source of truth for the judgment behind its change — the problem's background, the alternatives rejected and why, the limits knowingly accepted. A document that needs this content links to the proposal; it does not restate it.
+**Statement.** The proposal is the source of truth for the intent and judgment behind its change — the problem's background, the alternatives rejected and why, the limits knowingly accepted. A document that needs this content links to the proposal; it does not restate it.
 
 **Reasoning.** The same judgment written into two documents is edited apart and disagrees later, and every restatement is rewritten for its audience, so the copies drift by design, not by accident. Code already has this protection — C5 forbids the proposal to copy what code owns. The proposal's own content deserves the same rule in the other direction.
 

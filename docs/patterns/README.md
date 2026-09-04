@@ -2,6 +2,8 @@
 
 The core (`../concept.md`, `../rules.md`) is complete and small. Everything a team might want beyond it is a **pattern**: an optional addition that can be adopted, parameterized and removed on its own. This catalog lists them, says how they combine, and gives example compositions.
 
+> **Status: candidates.** Every card here was specified before anyone met its signal in the field, and keeps its place only as real adoptions test it. Expect cards to change or leave.
+
 ## What a pattern is
 
 Every pattern card has the same parts:
@@ -24,7 +26,6 @@ Every pattern card has the same parts:
 | [`human-ai-split`](human-ai-split.md) | Assistants draft; people approve the judgment; drafts are marked until then | An assistant is used to write any part of a proposal | Section classification; `<!-- ai-draft -->` marker; an instruction to assistants |
 | [`verification`](verification.md) | What was checked, observed, and not checked, in the proposal | "Was this tested?" has no findable answer after merge, or an unchecked path surfaces as a surprise | `Verification` |
 | [`evidence-verification`](evidence-verification.md) | Verification is commands and observations only | An assistant implements or tests | The strict section shape; a reviewer test; an agent rule |
-| [`success-criteria`](success-criteria.md) | A true/false definition of done | "Is it done?" is disputed, or someone else implements from the proposal | `Goals`, `Requirements` |
 | [`before-after`](before-after.md) | Describe what changed for readers who will not open the diff | Proposals are read months later or by agents, and the change cannot be reconstructed | `Change` (before / after / where) |
 | [`sizing-tiers`](sizing-tiers.md) | Explicit T0–T3 tiers with a rubric | Recurring after-the-fact arguments about how much review a change deserved | `tier` field; rubric; per-tier caps |
 | [`design-first-review`](design-first-review.md) | A docs-only PR reaches `accepted` before implementation | Risky changes arrive as finished code and reviewers cannot push back | `accepted` status; `Open questions`; two-stage flow |
@@ -46,12 +47,12 @@ One table for the core and every pattern. No pattern renames a section; a propos
 |---|---|---|
 | `Summary` | core (optional) | |
 | `Problem` | core | |
+| `Goals` | core | |
 | `Non-Goals` | core | |
+| `Requirements` | core | |
 | `Decisions` | core | |
 | `Product Decisions`, `Technical Decisions` | core | `Decisions` (together, when both kinds are present) |
 | `Risks` | core | |
-| `Goals` | `success-criteria` | |
-| `Requirements` | `success-criteria` | |
 | `Change` | `before-after` | |
 | `Verification` | `verification` | |
 | `Rollout & rollback` | `risk-signals` | |
@@ -90,7 +91,7 @@ Starting points, not prescriptions. Each is the core plus the listed patterns.
 | One person or a very small team, assistants used daily | `risk-signals`, `verification`, `human-ai-split`, `evidence-verification` | The smallest composition that keeps AI drafting honest. |
 | A product team with a few shared contracts | + `proposal-metadata`, `supersession`, `agent-context`, `living-docs-bridge`, `spike-then-spec` | Merged proposals become agent constraints; state documents stay honest. |
 | A platform team whose output is contracts | + `sizing-tiers`, `design-first-review`, `decision-promotion`, `lint-gate` | Pre-code review is enforceable; standards have a home. |
-| Several teams running quarterly initiatives | + `initiative-umbrella`, `outcome-review`, `success-criteria` | Work larger than one proposal, with its outcome revisited. |
+| Several teams running quarterly initiatives | + `initiative-umbrella`, `outcome-review` | Work larger than one proposal, with its outcome revisited. |
 | Any of the above, in Korean | + `multilingual-records` | Headings carry the English label; everything machine-facing stays English. |
 
 Moving between compositions is adding or removing lines in `docs/changes/README.md`. Nothing already written changes.

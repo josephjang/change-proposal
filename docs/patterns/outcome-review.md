@@ -1,6 +1,6 @@
 # Pattern: outcome-review
 
-- **Requires**: core, `success-criteria` (there must be a declared metric to compare against)
+- **Requires**: core (there must be a declared metric in `Requirements` to compare against)
 - **Combines with**: `initiative-umbrella` (always on for initiatives), `supersession` (an outcome is immutable once written), `proposal-metadata` (a `review_on` date)
 - **Conflicts with**: —
 

@@ -18,12 +18,27 @@
      How it works today and why it was built that way, when that matters — the diff shows only "after".
      "What is the problem" — not "what we will build". -->
 
+## Goals
+
+<!-- End states — "X is possible", not "build X". At least one. -->
+
+- 
+
 ## Non-Goals
 
 <!-- What this change deliberately does not do, and why — decided at scoping or discovered
      during the work. At least one. -->
 
 - 
+
+## Requirements
+
+<!-- Two to four statements, each judgeable true or false — the stopping condition: when every
+     one is true, the work is done. Ids are stable; never renumber. -->
+
+- R1: 
+- R2: 
+- (optional) Metric: (name) baseline (value) → target (value), (how measured)
 
 ## Decisions
 

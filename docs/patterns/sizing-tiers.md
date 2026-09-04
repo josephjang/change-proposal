@@ -1,7 +1,7 @@
 # Pattern: sizing-tiers
 
 - **Requires**: core, `proposal-metadata` (for the `tier` field)
-- **Combines with**: `risk-signals` (its three questions are the ★ rows of the rubric), `design-first-review` (tier ≥ T2 triggers the stage), `initiative-umbrella` (T3 is an initiative), `before-after` and `success-criteria` (required at T2+), `lint-gate`
+- **Combines with**: `risk-signals` (its three questions are the ★ rows of the rubric), `design-first-review` (tier ≥ T2 triggers the stage), `initiative-umbrella` (T3 is an initiative), `before-after` (its `Change` is required at T2+), `lint-gate`
 - **Conflicts with**: —
 
 ## Intent
