@@ -10,7 +10,7 @@ Three things make it what it is.
 
 - **It holds judgment, not description.** Code, schemas and interfaces describe themselves, and copied description goes stale the day after the merge. A proposal holds what the code cannot recover: the reasons.
 - **It travels with the change.** Same repository, same pull request, same review, same history. A document that must be found somewhere else is not read, by people or by agents. After the merge it is the change's record.
-- **It is small.** Six sections and an optional summary. Anything that would make it larger is either description, which belongs in the code, or something a team adds later when it needs it (see [Going further](#going-further)).
+- **It is small.** Six sections and an optional summary. Anything that would make it larger is either description, which belongs in the code, or belongs in a pattern (see [Going further](#going-further)).
 
 ### Why "proposal"
 
@@ -22,7 +22,7 @@ Write a proposal when a change alters observable behavior. Skip it when it does 
 
 That is the only sizing question, and it is answered by looking at what the change *does*, never at how many lines it touches, how long it took, or whether a person or an assistant wrote the code. A 2,000-line mechanical refactor with identical behavior needs no proposal. A one-line change to a permission check needs one. Diff size correlates badly with risk, and the correlation collapses entirely once assistants produce thousands of correct mechanical lines in minutes.
 
-Finer sizing, such as which changes deserve a reviewer before the code is written, is a later addition ([`risk-signals`](patterns/risk-signals.md), [`sizing-tiers`](patterns/sizing-tiers.md)), not part of the basic practice.
+Finer sizing, such as which changes deserve a reviewer before the code is written, is a pattern, not part of the core; [`risk-signals`](patterns/risk-signals.md) and [`sizing-tiers`](patterns/sizing-tiers.md) are the candidates for it.
 
 ## Where it lives
 
@@ -96,11 +96,11 @@ There is no length rule. A proposal is as long as its judgment and no longer; th
 
 ## Who writes it
 
-A person writes it, or explicitly approves each of its sections before the merge. Material may come from anywhere, a design discussion, a ticket, an assistant's draft, but the text of each section is a person's judgment. How an assistant's drafts are marked, and how approval is recorded, is left to each team; [`human-ai-split`](patterns/human-ai-split.md) describes one way.
+A person writes it, or explicitly approves each of its sections before the merge. Material may come from anywhere, a design discussion, a ticket, an assistant's draft, but the text of each section is a person's judgment. How an assistant's drafts are marked, and how approval is recorded, is a pattern, not part of the core; [`human-ai-split`](patterns/human-ai-split.md) is the candidate.
 
 ## After the merge
 
-A merged proposal is the record of the judgment of its time. Later knowledge is better recorded in a later proposal than written over the old one: overwriting erases "why we thought so then", and anyone reading proposals as constraints, whether a person or an agent, needs to be able to tell whether one is still current. The basic practice does not enforce this. A team decides case by case until the question comes up, and [`supersession`](patterns/supersession.md) describes a way to settle it.
+A merged proposal is the record of the judgment of its time. Later knowledge is better recorded in a later proposal than written over the old one: overwriting erases "why we thought so then", and anyone reading proposals as constraints, whether a person or an agent, needs to be able to tell whether one is still current. The core does not enforce this. A team decides case by case until the question comes up; [`supersession`](patterns/supersession.md) is the candidate pattern for settling it.
 
 ## What it is not
 
@@ -122,13 +122,15 @@ The practice is shaped for teams that build with AI assistance, where code, summ
 - **Proportional to blast radius, not diff size.** How much a change needs documenting is set by who and what it can affect and by how hard it is to reverse. Blast radius takes judgment and diff size is free, so teams drift back to diff size unless the question is kept to one: does behavior change?
 - **Judgment over description.** Describing is easier than judging, and assistants are excellent at describing. A proposal that admits description fills up with it. The six sections are all judgment, and the template refuses the rest.
 - **Rides with the code.** Reviewing the change and reviewing its reasoning are one act, and the record cannot be lost separately from the code. Readers who do not live in the repository get a rendered or mirrored copy, never a moved source.
-- **A record of its time.** A merged proposal says what was believed when the change was made. The cost is that current-state documents, a README, an architecture note, need their own upkeep, since the ledger of proposals will not tell a newcomer how things work today. [`living-docs-bridge`](patterns/living-docs-bridge.md) is one answer.
+- **A record of its time.** A merged proposal says what was believed when the change was made. The cost is that current-state documents, a README, an architecture note, need their own upkeep, since the ledger of proposals will not tell a newcomer how things work today. [`living-docs-bridge`](patterns/living-docs-bridge.md) is the candidate pattern for that.
 - **One source for the judgment.** The proposal holds its reasoning once; everything else links to it. This mirrors the other direction: the proposal does not copy what the code owns.
 
 When two of these pull against each other in a concrete case, truth wins over cost: write the judgment down, and keep it findable by linking rather than copying.
 
 ## Going further
 
-The practice above is complete; a team can use it alone for years. It is also deliberately silent about a great deal: how big a change must be before it needs more review, what happens to a merged proposal, what a proposal's metadata is, whether it records what was verified, how AI assistants participate, how coding agents read it, whether anything is enforced by tooling, which language it is written in.
+The six sections above are the core, and a team can use them alone. The core is also silent about a great deal: how big a change must be before it needs more review, what happens to a merged proposal, what a proposal's metadata is, whether it records what was verified, how AI assistants participate, how coding agents read it, whether anything is enforced by tooling, which language it is written in.
 
-Each of those has a candidate answer in [`patterns/`](patterns/README.md), organized by the question it answers. A team that has not adopted one is not missing it; it has not met the situation yet.
+Each of those is left to a **pattern**: an optional addition a team adopts when it meets the situation, combines with others as it needs, and drops without touching what was written. The core never assumes one. A team that has not adopted a pattern is not missing it; it has not met the situation yet.
+
+The patterns written so far, in [`patterns/`](patterns/README.md), are candidates: each was written before anyone met its situation, and each may yet be validated by use, absorbed into the core, or dropped. A team that meets one of those situations now adopts the candidate, and what it learns is what settles it.

@@ -1,8 +1,8 @@
 # Patterns
 
-The [guide](../guide.md) describes a complete practice. Everything here is optional: something a team may add when it meets the situation the pattern names. None is assumed by the guide, none is required, and each can be dropped again.
+The [guide](../guide.md) describes the core: six sections, and a team can use them alone. A **pattern** is how the practice grows beyond that. It is an optional addition, a section, a field, a step, a document, a tooling requirement, that a team adopts when it meets the situation the pattern names, combines with other patterns as it needs, and drops again without touching what was already written. The core never assumes one; a team that has not adopted a pattern is not missing it, it has not met the situation yet.
 
-> **Status: candidates.** Every pattern here was written before anyone met its situation in the field. They are kept as a shelf of thought-through answers, not as a menu to work through, and whether "patterns" is the right way to extend the practice at all is one of the open questions named in the [README](../../README.md). Expect entries to change or leave.
+> **Status: candidates.** Every pattern below was written before anyone met its situation in the field. They are candidates for the catalog, not validated members of it, and each can still go one of three ways as adoptions meet its situation: validated as a pattern and kept; absorbed into the core, the way `Requirements` was, which began as a pattern and moved into the guide after the first adoption; or dropped, because nobody met the situation or the answer did not hold up. Expect entries to move, change or leave.
 
 ## By the question they answer
 
@@ -27,19 +27,23 @@ The [guide](../guide.md) describes a complete practice. Everything here is optio
 | A proposal merged with draft markers still in it. | [`lint-gate`](lint-gate.md) | Mechanical checks in CI |
 | We write in Korean. Will tooling still find the sections? | [`multilingual-records`](multilingual-records.md) | A heading convention that keeps section names machine-readable |
 
-## How they fit together
+## Adopting one
 
-Each pattern adds something to a proposal or to the process around it: a section, a front-matter field, a step, a document, a tooling requirement. None changes what the guide describes, and none rewrites another's addition. Section names come from one shared list (below) so that a proposal written under several patterns still reads as one document.
-
-A few patterns lean on another. `supersession`, `sizing-tiers`, `design-first-review`, `initiative-umbrella` and `agent-context` need the front matter that `proposal-metadata` adds; `evidence-verification` tightens the section that `verification` adds; `design-first-review` and `living-docs-bridge` need `risk-signals` or `sizing-tiers` to know which proposals they apply to. Each page says what it needs. One real incompatibility exists: `agent-context` assumes merged proposals are not edited in place (which is what `supersession` provides), because an agent cannot otherwise tell which proposals still hold.
-
-Where a pattern has a knob (a word cap, a reviewer count, a turnaround), its page names it and gives a default.
-
-A repository says which patterns it uses in a sentence at the top of its `docs/changes/README.md`:
+A repository says which patterns it uses in a sentence at the top of its `docs/changes/README.md`, so that a reader of the proposals knows what to expect:
 
 > This repository uses change proposals with `risk-signals`, `verification`, `human-ai-split` and `evidence-verification`. Reviewers on a risk signal: 1. Record language: English.
 
-That sentence is the whole mechanism. Patterns that bring tooling (`lint-gate`, `agent-skills`) may turn it into a configuration file; the sentence remains the version people read. Dropping a pattern is deleting it from the sentence; proposals already written under it stay as they are.
+That sentence is the whole mechanism. Patterns that bring tooling (`lint-gate`, `agent-skills`) may turn it into a configuration file; the sentence remains the version people read. Dropping a pattern is deleting it from the sentence; proposals already written under it stay as they are, and each page says what else changes.
+
+Because the patterns are candidates, what a team learns from one, whether it wished every proposal had carried it or whether it was ceremony, is what validates it, absorbs it into the core, or retires it. Tell this repository ([CONTRIBUTING](../../CONTRIBUTING.md)).
+
+## How they fit together
+
+Each pattern adds something to a proposal or to the process around it. None changes what the guide describes, and none rewrites another's addition, so that several can be adopted at once and a proposal written under several still reads as one document. Section names come from one shared list (below).
+
+A few lean on another. `supersession`, `sizing-tiers`, `design-first-review`, `initiative-umbrella` and `agent-context` need the front matter that `proposal-metadata` adds; `evidence-verification` tightens the section that `verification` adds; `design-first-review` and `living-docs-bridge` need `risk-signals` or `sizing-tiers` to know which proposals they apply to. Each page says what it needs. One real incompatibility exists: `agent-context` assumes merged proposals are not edited in place (which is what `supersession` provides), because an agent cannot otherwise tell which proposals still hold.
+
+Where a pattern has a knob (a word cap, a reviewer count, a turnaround), its page names it and gives a default.
 
 ## Sections a proposal may carry
 
@@ -61,7 +65,7 @@ Headings in another language are the `multilingual-records` pattern.
 
 ## Starting points
 
-Not prescriptions; combinations that hang together.
+Combinations that have been thought through together, for a team adopting several at once. Not prescriptions, and, like the patterns themselves, not yet validated.
 
 | Situation | Patterns | Notes |
 |---|---|---|
@@ -71,8 +75,10 @@ Not prescriptions; combinations that hang together.
 | Several teams running quarterly initiatives | + `initiative-umbrella`, `outcome-review` | Work larger than one proposal, with its outcome revisited. |
 | Any of the above, in Korean | + `multilingual-records` | Headings carry the English name; everything machine-facing stays English. |
 
-Moving between combinations is editing the sentence in `docs/changes/README.md`. Nothing already written changes.
+Changing the set is editing the sentence in `docs/changes/README.md`. Nothing already written changes.
 
-## Adding one
+## Adding, validating, absorbing, retiring
 
 A new pattern arrives as a change to this repository ([CONTRIBUTING](../../CONTRIBUTING.md)). It should say what situation it answers, ideally one somebody actually met, what it adds, and what every change pays while it is on. A pattern that cannot name its situation is ceremony looking for a home.
+
+Validating a candidate, absorbing it into the core, or retiring it arrives the same way, and the evidence is adoptions. A candidate every adopter picks up early is core material. One that holds up where its situation appears is a validated pattern. One nobody meets is retired.
