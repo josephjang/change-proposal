@@ -1,5 +1,7 @@
 # Pattern: spike-then-spec
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Makes "build to learn, then write the proposal" a first-class path, so that proposals are written from knowledge rather than to justify a prototype that already exists.
 
 **When.** Proposals are being written after the fact to rationalize prototypes, or authors skip the proposal because "we did not know what we were building until we built it".
@@ -24,4 +26,4 @@ None per change. One discipline: noticing the moment a spike turns into a change
 
 ## Removing it
 
-Without this pattern the guide reads as "the proposal comes first", and teams that prototype will quietly work around it.
+Stop writing abandoned notes, and drop the `abandoned` status. The core ties a proposal to the change that alters behavior and says nothing about prototypes, so when a spike has become that change is decided case by case, and what a discarded spike taught is recorded nowhere.

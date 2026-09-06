@@ -1,5 +1,7 @@
 # Pattern: human-ai-split
 
+**Candidate.** Written before anyone met its situation; not validated. The situation has since arrived: the first adoption drafted a proposal with an assistant, did not adopt this pattern, and the page was rewritten on that finding. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Lets an AI assistant do all the drafting it is good at while making it impossible for the judgment in a proposal to have been authored by no one.
 
 **When.** An assistant is used to write any part of a proposal.
@@ -38,4 +40,4 @@ A few minutes of deciding and reading per proposal, which the person should be s
 
 ## Removing it
 
-Drop the marker and the checklist line. A team that removes this pattern while still using assistants to draft has decided to trust assistant-authored judgment; that decision deserves a proposal of its own.
+Drop the marker and the checklist line. The core still asks that a person write each section or explicitly approve it; what goes is the per-section record of when that happened, so approval stops being visible in the history.

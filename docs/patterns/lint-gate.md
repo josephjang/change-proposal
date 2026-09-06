@@ -1,5 +1,7 @@
 # Pattern: lint-gate
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Moves the mechanical checks, file placement, front matter, markers, caps, immutability, required sections, out of reviewers' heads and into CI, so review time is spent on judgment.
 
 **When.** A proposal merged with `<!-- ai-draft -->` markers still in it, a behavior change merged without a proposal, or a merged proposal edited in place. One occurrence is enough.

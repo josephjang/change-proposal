@@ -1,5 +1,7 @@
 # Pattern: sizing-tiers
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Replaces "does behavior change?" plus three risk questions with an explicit, lint-able tier, for a team that needs more resolution than "ordinary or risky".
 
 **When.** Recurring after-the-fact arguments, "this should have had more review", "this did not need all that", that the three risk signals do not settle. Typically past a few dozen proposals or past one team.

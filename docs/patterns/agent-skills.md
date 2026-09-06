@@ -1,5 +1,7 @@
 # Pattern: agent-skills
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Packages the mechanical parts of the practice, finding constraints, scaffolding a proposal, sizing, finishing, reviewing, reversing, as skills that Claude Code and Codex can run, so the same procedure is not pasted into every session.
 
 **When.** The same multi-step instructions are being pasted into agent sessions repeatedly, or agents perform the steps inconsistently across sessions.

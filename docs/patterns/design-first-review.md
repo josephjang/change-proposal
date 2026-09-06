@@ -1,5 +1,7 @@
 # Pattern: design-first-review
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Turns "a reviewer reads the draft before code" into a named stage, `accepted`, reached through a docs-only pull request, for the changes where a comment on a branch is not enough to stop a wrong design.
 
 **When.** Risky changes keep arriving as finished code and reviewers say they cannot push back on the design because the work is already done. Or the `risk-signals` pre-code read is being skipped because nothing enforces it.

@@ -1,5 +1,7 @@
 # Pattern: before-after
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Describes what changed, how it worked before and why, how it works after, and where, for readers who will not open the diff: a colleague a year later, an agent searching the area, a reviewer of a superseding proposal.
 
 **When.** Proposals are read without their pull request (months later, by agents, across repositories) and readers cannot reconstruct what actually changed. Or the reason something was built the old way is lost because the diff shows only "after".

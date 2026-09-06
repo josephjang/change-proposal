@@ -1,6 +1,8 @@
 # Pattern: outcome-review
 
-Closes the loop on the metrics a proposal declared, and records where the prediction was wrong: the most useful line in the whole practice for the *next* decision.
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
+Closes the loop on the metrics a proposal declared, and records where the prediction was wrong, which is what the *next* decision of the same kind has to go on.
 
 **When.** Proposals declare metrics with baselines and targets and nobody looks at the actual values. Or the same optimistic assumption appears in a third proposal.
 
@@ -42,4 +44,4 @@ One page per initiative, thirty days late.
 
 ## Removing it
 
-Stop scheduling; existing reviews remain. Metrics revert to decoration.
+Stop scheduling; existing reviews remain. A declared metric keeps its baseline, its target and how it is measured, so anyone can re-measure later; nobody is scheduled to.

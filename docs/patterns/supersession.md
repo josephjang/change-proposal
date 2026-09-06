@@ -1,8 +1,10 @@
 # Pattern: supersession
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Keeps every merged proposal an honest record of the judgment of its time, and makes "is this proposal still current?" answerable from one file's front matter.
 
-**When.** The first time someone wants to "fix" a merged proposal. Adopting it before that moment is cheaper than arguing it then.
+**When.** The first time someone wants to "fix" a merged proposal. Adopted at that moment, the rule arrives in the middle of the argument it settles.
 
 **Needs.** `proposal-metadata` (for `status` and the two fields below). Goes with `agent-context` (agents rely on `status` and `superseded_by` to judge validity), `living-docs-bridge` (the bridge that makes immutability bearable), `lint-gate` (immutability is checked against a base ref).
 

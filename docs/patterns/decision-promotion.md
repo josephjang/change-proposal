@@ -1,5 +1,7 @@
 # Pattern: decision-promotion
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Separates decisions that belong to one change from decisions that constrain every future change, and gives the latter a home that is not buried in a proposal about something else.
 
 **When.** The same decision is cited from three or more proposals, or a newcomer asks "where is it written that we do X?" and the answer is "in the proposal about Y".

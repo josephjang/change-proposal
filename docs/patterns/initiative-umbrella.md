@@ -1,5 +1,7 @@
 # Pattern: initiative-umbrella
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Handles work too large for one proposal, weeks, several people, several pull requests, without inventing a separate planning-document culture: an initiative is a brief, a design and a set of ordinary proposals that point at them.
 
 **When.** A month-plus, multi-team initiative starts, or the problem itself is uncertain and cross-team at once. Before that the pattern is pure overhead.

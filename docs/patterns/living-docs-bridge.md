@@ -1,5 +1,7 @@
 # Pattern: living-docs-bridge
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Keeps the documents that describe *current state* honest by making every change that alters the state say which of them it updated.
 
 **When.** Someone answers "how does this work today?" by reading several proposals in order, or a README is found describing a structure that stopped existing three proposals ago.

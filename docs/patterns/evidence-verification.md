@@ -1,5 +1,7 @@
 # Pattern: evidence-verification
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Makes the `Verification` section a list of evidence rather than a list of claims, so that a reader, or an agent building on the change, can tell what is actually known to work.
 
 **When.** An assistant implements or tests any part of a change. Also: a reviewer catches a "verified" line that turns out not to have been run.
@@ -33,4 +35,4 @@ None beyond honesty.
 
 ## Removing it
 
-The `verification` pattern's looser wording remains. Removing this while assistants implement code means accepting their verification claims at face value.
+The `verification` pattern's looser wording remains: what was checked and observed, and what was not, without the requirement that each line name a command and its result. Telling a run check from a reported one goes back to the reviewer.

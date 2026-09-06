@@ -1,8 +1,10 @@
 # Pattern: risk-signals
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Catches the changes whose cost of being wrong is high, before the code is written, with three questions instead of a rubric, so that everything else stays small.
 
-**When.** The first change that someone wishes had been discussed before it was built. Most teams meet this within weeks; adopting it from the start is reasonable.
+**When.** The first change that someone wishes had been discussed before it was built.
 
 **Goes with.** `design-first-review` (turns "a reviewer reads the draft" into a formal stage), `sizing-tiers` (the three signals become the ★ questions), `living-docs-bridge` (a signal triggers the living-docs section).
 
@@ -54,4 +56,4 @@ Signal-free changes: one line in the PR. Changes with a signal: two sections and
 
 ## Removing it
 
-Delete the questions and the two sections from the template. Proposals already carrying the sections remain valid. Without this pattern or `sizing-tiers` the practice has no sizing beyond "does behavior change?", which is a legitimate choice only for small, low-risk codebases.
+Delete the questions and the two sections from the template. Proposals already carrying the sections remain valid. Without this pattern or `sizing-tiers`, the core's one question, "does behavior change?", is the whole of sizing, and which changes get a reader before the code is written is decided case by case.

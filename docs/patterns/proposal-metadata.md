@@ -1,5 +1,7 @@
 # Pattern: proposal-metadata
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Gives a proposal machine-readable identity and state, who owns it, what state it is in, which pull requests and issue it belongs to, which areas it touches, without putting any of that in the prose.
 
 **When.** Proposals need to be found by something other than their date and title (an area, an owner, a status), or a change spans more than one pull request and readers cannot tell whether the proposal describes finished work.

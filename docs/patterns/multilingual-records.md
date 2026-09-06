@@ -1,5 +1,7 @@
 # Pattern: multilingual-records
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Lets a team write proposals in its own language while everything a machine or a cross-team reader relies on, section names, front matter, tags, file names, stays English.
 
 **When.** The team writes, or wants to write, proposals in a language other than English; or a repository is shared between teams writing in different languages.

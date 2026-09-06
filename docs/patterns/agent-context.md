@@ -1,5 +1,7 @@
 # Pattern: agent-context
 
+**Candidate.** Written before anyone met its situation; not validated. It may be validated by use, absorbed into the core, or dropped. See [the catalog](README.md).
+
 Turns merged proposals into constraints that coding agents actually read before they touch the same area, so that rejected alternatives are not rebuilt and non-goals are not quietly reversed.
 
 **When.** An agent, or a person new to the area, rebuilds an alternative a proposal rejected, or implements something a proposal listed as a non-goal.

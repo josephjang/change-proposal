@@ -5,8 +5,11 @@
      repository's own document marker (an id scheme, a date) if one exists.
      Written by a person, or approved by a person section by section. Delete any section with nothing to say.
      Reference code by path; never paste schemas, signatures or file lists.
-     Sections beyond these come from the patterns your repository uses (listed at the top of docs/changes/README.md).
-     What each section is for, and why: docs/guide.md. -->
+     Sections beyond these come from the patterns your repository uses (listed at the top of your own
+     docs/changes/README.md); the patterns themselves are in
+     [the catalog](https://github.com/josephjang/change-proposal/blob/main/docs/patterns/README.md).
+     What each section is for, and why:
+     [the guide](https://github.com/josephjang/change-proposal/blob/main/docs/guide.md). -->
 
 ## Summary
 

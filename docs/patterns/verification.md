@@ -1,5 +1,7 @@
 # Pattern: verification
 
+**Candidate.** Not validated, and not written ahead of its situation either: this section was part of the core until the first adoption's findings moved it out. It may be validated by use, absorbed back into the core, or dropped. See [the catalog](README.md).
+
 Records in the proposal what was checked and what was observed, and what was *not* checked, which no pull request or tracker keeps.
 
 **When.** "Was this actually tested?" is asked after the merge and the answer lives only in CI logs or a chat scroll; or an unchecked path surfaces as a surprise because no record said it was not checked.
@@ -29,4 +31,4 @@ A few lines written at finish time, when the answer is freshest, plus the discip
 
 ## Removing it
 
-Drop the section from the template. What was verified reverts to the PR description; what was not checked reverts to nowhere, which is the reason to keep it.
+Drop the section from the template. What was verified reverts to the PR description; what was not checked is recorded nowhere.
