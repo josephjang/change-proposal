@@ -4,34 +4,65 @@ This is the practice, explained once. It is written to be understood rather than
 
 ## What a change proposal is
 
-A **change proposal** records the intent and judgment behind one change to a product or system: why it is being made, what it deliberately leaves out, what was decided and what was rejected, and what risks were knowingly accepted. It is started before the work and finished with it: whoever builds the change, a person or an AI assistant, builds it from the proposal, and after the merge the proposal is the change's record. A person or an assistant writes it; what stands behind what it says is the process the change goes through, review included. It lives in the repository and merges in the same pull request as the change.
+A **Change Proposal** records the intent and judgment behind one change to a product or system: why it is being made, what it deliberately leaves out, what was decided and what was rejected, and what risks were knowingly accepted. It is started before the work and finished with it: whoever implements the change works from the proposal, and after the merge the proposal is the change's record.
+
+A proposal has two named forms. A **Unified Change Proposal** keeps the change in one concise document. A **Split Change Proposal** separates it into **Product Requirements** and **Technical Design**, together one proposal. The Unified form suits small, straightforward feature additions and changes. The Split form suits technically complex changes whose product and technical aspects need separate treatment and review.
+
+A person or an assistant writes it; what stands behind what it says is the process the change goes through, review included. It lives in the repository and merges in the same pull request as the change.
 
 Four things make it what it is. They follow from the setting it is made for: teams that build with AI assistance, where code, summaries and verification logs are cheap to produce and judgment is not.
 
-- **It is what the change is built from.** It comes before the code, not after it, and whoever implements the change, a person or an AI assistant, works from it: `Problem` says why, `Goals` the end state, `Non-Goals` what not to build, `Requirements` when to stop, `Decisions` which way was chosen. A proposal that could not be handed to an implementer is missing something.
-- **It holds judgment, not description.** Code, schemas and interfaces describe themselves, and copied description goes stale the day after the merge. A proposal holds what the code cannot recover: the reasons.
-- **It travels with the change.** Same repository, same pull request, same review, same history. A document that must be found somewhere else is not read, by people or by agents.
-- **It is small.** Six sections and an optional summary. Anything that would make it larger is either description, which belongs in the code, or an addition for a situation this practice does not cover (see [Going further](#going-further)).
+- **It is what the change is built from.** It comes before the code. It tells the implementer why, what end state to reach, what not to build, when to stop, and which choices matter. A technically complex change also has a design that can be assessed against those requirements.
+- **It keeps the reasoning.** Code describes the implemented system; the proposal preserves the reasons, rejected alternatives, and accepted risks that code cannot recover. Technical Design explains the proposed solution far enough to review those choices without becoming a copy of the implementation.
+- **It travels with the change.** Same repository, same pull request, same review, same history. Both documents in the Split form belong to that change.
+- **Its form fits the work.** The original six-section document keeps ordinary changes simple. Separating Product Requirements and Technical Design gives complex changes room for independent review without making every change pay that cost.
 
 ### Why "proposal"
 
-The document's first job is to put an intent in front of whoever will build the change and whoever will review it, and, unlike a spec, it does not try to describe the solution. It proposes: here is the problem, here is what we will not do, here is what we decided and gave up. After the merge it is still called a proposal; its position on the main branch says it was carried out.
+The proposal's first job is to put the intended change in front of whoever will build it and whoever will review it. It explains the problem, the scope, the choices, and the trade-offs. When the solution needs its own technical treatment, Technical Design is part of that proposal. After the implementation merges, it is still called a proposal; it records what the change was built from.
 
 ## When to write one
 
 Write a proposal when a change alters observable behavior. Skip it when it does not: a refactor with identical behavior, a typo, a dependency patch, tests only. In that case the pull-request description says there is no behavior change and how that was checked.
 
-That is the only sizing question, and it is answered by looking at what the change *does*, never at how many lines it touches, how long it took, or whether a person or an assistant wrote the code. A 2,000-line mechanical refactor with identical behavior needs no proposal. A one-line change to a permission check needs one. Diff size correlates badly with risk, and the correlation collapses entirely once assistants produce thousands of correct mechanical lines in minutes.
+That decides whether a proposal is needed, and it is answered by looking at what the change *does*, never at how many lines it touches, how long it took, or whether a person or an assistant wrote the code. A 2,000-line mechanical refactor with identical behavior needs no proposal. A one-line change to a permission check needs one.
+
+## Choosing a form
+
+Use **Unified form** and **Split form** as the short names. They describe how one proposal is organized, not size tiers, approval levels, or stages of work. Both are complete proposals. A Unified proposal is not a product-only draft awaiting a design, and either document alone is not a complete Split proposal. A change can start in either form; moving from Unified to Split is a reorganization when needed, not a required progression.
+
+| Form | Use it for | Documents |
+|---|---|---|
+| Unified | Small, straightforward changes whose requirements and main decisions are enough to build and review from | One document, using the original [Change Proposal template](../templates/change-proposal.md) |
+| Split | Changes with technical complexity that benefits from separate product and technical review | Two documents, [Product Requirements](../templates/product-requirements.md) and [Technical Design](../templates/technical-design.md), together one proposal |
+
+Use the Unified form as the starting point for ordinary work. Choose the Split form when the technical aspect needs its own explanation: interacting state transitions, a data migration, compatibility across components, or a consequential architecture choice. A small feature can contain one of these; file count or a fixed line threshold would miss it.
+
+The split lets a reviewer assess whether the desired behavior and scope are right, and separately assess whether the design is sound. One person can do both reviews in separate passes. Finish by checking that the two documents agree. This does not prescribe a fixed sequence of approvals: technical investigation can change the product proposal too.
+
+The [Split form guide](split-proposals.md) explains each document, the review questions, and how to split a draft when complexity becomes clear during the work. The Unified form remains sufficient when a separate design review would add little.
+
+The [worked examples](../examples/README.md) show both forms filled in for independent changes to the same fictional notes app: clearing a search in one document, and adding recoverable note deletion in two.
 
 ## Where it lives
 
-`docs/changes/YYYY-MM-DD-<slug>.md`, committed in the same pull request as the code. A repository with its own document location or naming convention uses that instead; what matters is that the proposal is found next to the code, not the exact path.
+Use `docs/changes/`, with the proposal committed in the same pull request as the code. These are the recommended names when starting a new proposal:
 
-The title is `Change Proposal: <change name>`, so that the document says what it is to a reader who never sees its path. A repository that already marks its documents its own way, with an id scheme or a date, uses that marker instead.
+| Form or part | File | Title |
+|---|---|---|
+| Unified proposal | `YYYY-MM-DD-<slug>.md` | `Change Proposal: <change name>` |
+| Product part of a Split proposal | `YYYY-MM-DD-<slug>.requirements.md` | `Product Requirements: <change name>` |
+| Technical part of that Split proposal | `YYYY-MM-DD-<slug>.design.md` | `Technical Design: <change name>` |
+
+The form names are vocabulary for discussion and guidance, not new file names, title prefixes, or metadata fields. The original template is the Unified template without being renamed. In the Split form, each document's title continues to identify its product or technical role.
+
+The two files share a date and slug and link to each other. When splitting an existing draft, its `.md` path can stay: retitle that file Product Requirements and add the matching `.design.md`. Existing requirement and decision IDs can stay too; update references to content that moves. The [conversion guide](split-proposals.md#starting-with-one-document-and-splitting-later) explains the details.
+
+No third proposal or summary file is needed. A repository with its own document location, naming convention, or title marker can use that instead; what matters is that the proposal is identifiable and found next to the code.
 
 ## What goes in it
 
-A title, an optional summary, and six sections with fixed names, in this order (the [template](../templates/change-proposal.md) carries them all):
+In the Unified form, use a title, an optional summary, and six sections with fixed names, in this order (the [original template](../templates/change-proposal.md) carries them all):
 
 | Section | Holds |
 |---|---|
@@ -43,7 +74,7 @@ A title, an optional summary, and six sections with fixed names, in this order (
 | **Decisions** | Decisions that had alternatives: what was chosen, what was rejected, why. |
 | **Risks** | Trade-offs accepted knowingly, with the reason. |
 
-The names are fixed and in English so that a proposal from one repository reads like a proposal from another, and so that tooling and agents can find sections without guessing.
+The names are fixed and in English so that this form reads consistently across repositories, and so that tooling and agents can find sections without guessing. The Split form uses the [Product Requirements and Technical Design sections](split-proposals.md#what-each-document-holds); the six-section layout applies to the Unified form.
 
 A section with nothing to say is deleted rather than filled: an empty heading tells the reader nothing, and a section filled for form teaches them to skip it next time. In practice that means `Decisions`, `Risks` and the optional `Summary`. A change worth a proposal always has a problem, a goal, something it will not do, and a way to tell when it is done.
 
@@ -69,7 +100,7 @@ What this change deliberately does not do, and why, whether decided at scoping o
 
 ### Requirements
 
-Statements that can be judged true or false. Together they are the stopping condition for whoever implements the change, a person or an assistant: when every one is true, the work is done, and anything further is a new change. Give each a short id (R1, R2, …) so that review comments and later proposals can refer to it.
+Statements that can be judged true or false. Together they are the stopping condition for whoever implements the change, a person or an assistant: when every one is true, the work is done, and anything further is a new change. Give each a short id (R1, R2, ...) so that review comments and later proposals can refer to it.
 
 A metric belongs here when the change is meant to move a number. It carries a baseline, a target and how it is measured, so that anyone can re-measure later.
 
@@ -83,29 +114,36 @@ Trade-offs accepted knowingly, with the reason. Not a list of everything that co
 
 ## What stays out
 
-A proposal does not reproduce content whose source of truth is the code, the tests or the tracker: schemas, signatures, payloads, file lists, task breakdowns. It references them by path. Copied description goes stale the day after the merge and teaches readers to distrust the document; judgment does not go stale, because it is a fact about the past.
+The Unified form focuses on intent and judgment. It references code, tests, and tracker content by path instead of reproducing schemas, signatures, payloads, file lists, or task breakdowns.
 
-The same rule runs the other way. The proposal is the source for the intent and judgment behind its change. A pull-request description, a tracker comment or a state document that needs that content links to the proposal rather than restating it; the same judgment written into two documents is edited apart and disagrees later. A one-sentence summary next to the link is a fine compromise; a full restatement is not.
+In the Split form, Technical Design can explain a proposed contract, state transition, or data flow when a choice depends on it. Include enough to assess the design before implementation, then reference executable definitions once they exist. Copied implementation detail goes stale; the design remains a record of the reasoning for that change, not a maintained description of the current system.
 
-There is no length rule. A proposal is as long as its judgment and no longer; the pressure toward brevity comes from what is excluded, not from a cap.
+The proposal is the source for the intent and judgment behind its change. In the Split form, Product Requirements owns scope, requirements, and product judgments; Technical Design owns detailed technical judgments, design, and verification. Each requirement or rationale has one authoritative home, linked from the other document.
+
+A pull-request description, tracker comment, or state document that needs that content links to its source rather than restating it. A one-sentence summary next to the link is a fine compromise; a full restatement is not.
+
+There is no length rule. Include what the reader needs to assess the change's intent and choices, with technical design where needed; the pressure toward brevity comes from what is excluded, not from a cap.
 
 ## After the merge
 
-A merged proposal is the record of the judgment of its time. Later knowledge is better recorded in a later proposal than written over the old one: overwriting erases "why we thought so then", and anyone reading proposals as constraints, whether a person or an agent, needs to be able to tell whether one is still current. The practice does not enforce this; a team decides case by case until the question comes up.
+A merged proposal is the record of the judgment of its time, whether it consists of one document or two. Later knowledge is better recorded in a later proposal than written over the old one: overwriting erases "why we thought so then". Anyone reading proposals as constraints needs to be able to tell whether a later change reversed a decision. The practice does not enforce this; a team decides case by case until the question comes up.
 
-A ledger of proposals will not tell a newcomer how things work today. Current-state documents, a README or an architecture note, need their own upkeep.
+A ledger of proposals will not tell a newcomer how things work today. Current-state documents, a README or an architecture note, need their own upkeep. For work spanning several PRs, distinguish shared direction from implemented changes as described in [Work spanning several PRs](split-proposals.md#work-spanning-several-prs).
 
-## What it is not
+## Relationship to other documents
 
-| Not a… | Because… |
+Product Requirements and Technical Design can be constituent documents of a Change Proposal. Each concerns the same bounded change: the product part explains what should change and why, and the technical part explains how the requirements will be met and verified.
+
+| Document | Relationship |
 |---|---|
-| Product requirements document | A PRD describes a product area; a proposal describes one change, and only what code cannot say. |
-| Design document or RFC | A design document describes a solution; a proposal describes the decisions inside it and points at the code for the rest. |
 | Architecture decision record | An ADR holds a decision that outlives any single change; a proposal holds the decisions within one change. |
-| Pull-request description | A PR description explains a diff to its reviewer and is forgotten. A proposal is written to be found later. For changes with no behavior change, the PR description is the whole record. |
+| Pull-request description | A PR description explains a diff to its reviewer and points to the proposal for the lasting reasoning. For changes with no behavior change, the PR description can be the whole record. |
 | Ticket | A ticket tracks work; a proposal holds reasoning. They link to each other. |
-| Prompt or session transcript | A prompt is written for one session and lost with it, and a transcript is raw material; a proposal is what the prompt points at and what the transcript was distilled into, reviewed with the code and kept. |
+| Prompt or session transcript | A prompt can point to the proposal, and a transcript supplies raw material. The proposal distills the reviewed intent and judgment into a record kept with the code. |
+| Reference document | A reference document describes the current system and needs upkeep. A proposal records a particular change and the judgment of its time. |
 
 ## Going further
 
-That is the whole practice. It says nothing, on purpose, about review stages, metadata, whether a proposal records what was verified, how an assistant's drafts are approved, what coding agents read, tooling, or the language it is written in. A team that meets a situation the practice does not cover writes the smallest addition that answers it, as a **pattern**: optional, adopted when its situation appears, and dropped without touching what was written. The practice never assumes one, and none is published here yet; a team that writes one is welcome to send it here with what it learned.
+These two forms describe the core practice. Teams choose their own approval ownership, agent instructions, tooling, and language conventions. A team that meets a situation the practice does not cover writes the smallest addition that answers it, as a **pattern**: optional, adopted when its situation appears, and dropped without touching what was written.
+
+The [Split form guide](split-proposals.md) develops the form for technically complex changes with templates and examples from TarkovHelper. Other extensions can be contributed with the situation that called for them and what the team learned in use.
